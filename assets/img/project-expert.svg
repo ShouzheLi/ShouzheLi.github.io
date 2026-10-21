@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="title desc">
+  <title id="title">Embodied AI expert skill and agent</title>
+  <desc id="desc">A knowledge graph with a central CEO agent connected to models, RSI, world models, hardware, evaluation, and industry, plus a simulation skill node.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1b1813"/><stop offset="1" stop-color="#0c0b09"/>
+    </linearGradient>
+    <radialGradient id="glow" cx=".5" cy=".42" r=".66">
+      <stop offset="0" stop-color="#c2571f" stop-opacity=".22"/><stop offset="1" stop-color="#c2571f" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="1.2" cy="1.2" r="1" fill="#f3ede2" opacity=".06"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="500" rx="22" fill="url(#bg)"/>
+  <rect width="800" height="500" rx="22" fill="url(#glow)"/>
+  <rect width="800" height="500" rx="22" fill="url(#dots)"/>
+
+  <!-- links -->
+  <g stroke="#63b8a1" stroke-opacity=".32" stroke-width="1.2">
+    <path d="M400 250 L170 130"/>
+    <path d="M400 250 L400 92"/>
+    <path d="M400 250 L630 130"/>
+    <path d="M400 250 L160 372"/>
+    <path d="M400 250 L400 410"/>
+    <path d="M400 250 L640 372"/>
+    <path d="M400 250 L640 250" stroke-dasharray="4 5" stroke="#c2571f" stroke-opacity=".55"/>
+    <path d="M170 130 L400 92 M630 130 L400 92 M170 130 L160 372 M630 130 L640 372" stroke-opacity=".12"/>
+  </g>
+
+  <!-- nodes -->
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.5" letter-spacing=".08em" text-anchor="middle">
+    <g>
+      <circle cx="400" cy="250" r="46" fill="#241c16" stroke="#c2571f" stroke-width="1.6"/>
+      <text x="400" y="254" fill="#f3ede2" font-size="12" letter-spacing=".12em">CEO</text>
+    </g>
+    <g fill="#17262a" stroke="#63b8a1" stroke-opacity=".65">
+      <circle cx="170" cy="130" r="34"/><circle cx="400" cy="92" r="34"/><circle cx="630" cy="130" r="34"/>
+      <circle cx="160" cy="372" r="34"/><circle cx="400" cy="410" r="34"/><circle cx="640" cy="372" r="34"/>
+    </g>
+    <g fill="#9ed8c7">
+      <text x="170" y="127">MODELS</text><text x="170" y="140" fill="#f3ede2" opacity=".45">VLA</text>
+      <text x="400" y="89">RSI</text><text x="400" y="102" fill="#f3ede2" opacity=".45">L1–L5</text>
+      <text x="630" y="127">WORLD</text><text x="630" y="140" fill="#f3ede2" opacity=".45">WAM</text>
+      <text x="160" y="369">HARDWARE</text><text x="160" y="382" fill="#f3ede2" opacity=".45">DEPLOY</text>
+      <text x="400" y="407">EVAL</text><text x="400" y="420" fill="#f3ede2" opacity=".45">L0–L3</text>
+      <text x="640" y="369">INDUSTRY</text><text x="640" y="382" fill="#f3ede2" opacity=".45">ECOSYSTEM</text>
+    </g>
+    <g>
+      <rect x="572" y="222" width="104" height="56" rx="12" fill="#1d1914" stroke="#c2571f" stroke-opacity=".6" stroke-dasharray="4 4"/>
+      <text x="624" y="244" fill="#e9b49e" font-size="9">SIM PLATFORM</text>
+      <text x="624" y="258" fill="#f3ede2" opacity=".5" font-size="8">SEPARATE SKILL</text>
+    </g>
+  </g>
+
+  <g font-family="ui-monospace, monospace">
+    <text x="34" y="48" font-size="11" letter-spacing="3" fill="#c2571f">EMBODIED AI EXPERT</text>
+    <text x="34" y="70" font-size="9" letter-spacing="1.4" fill="#f3ede2" opacity=".5">2 SKILLS · 1 AGENT · 248 SOURCES</text>
+    <text x="34" y="470" font-size="9" letter-spacing="1.5" fill="#f3ede2" opacity=".38">KNOWLEDGE → SKILL → AGENT</text>
+    <text x="766" y="470" text-anchor="end" font-size="9" letter-spacing="1.5" fill="#63b8a1" opacity=".7">ROUTING</text>
+  </g>
+  <rect x="1" y="1" width="798" height="498" rx="21" fill="none" stroke="#f3ede2" stroke-opacity=".1"/>
+</svg>

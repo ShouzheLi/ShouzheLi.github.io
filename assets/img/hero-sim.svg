@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Abstract simulation viewport with a robot arm, camera frustum, and evaluation protocol labels</title>
+  <desc id="desc">A dark technical illustration of an Isaac-style simulation scene: perspective grid, robot arm, object bounding boxes, camera frustum, and L0–L3 protocol labels.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1c1813"/>
+      <stop offset="1" stop-color="#0c0b09"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.74" cy="0.16" r="0.7">
+      <stop offset="0" stop-color="#c2571f" stop-opacity=".28"/>
+      <stop offset=".55" stop-color="#c2571f" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="teal" cx="0.18" cy="0.78" r="0.55">
+      <stop offset="0" stop-color="#63b8a1" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#63b8a1" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="scan" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#63b8a1" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#63b8a1" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#63b8a1" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f1e4cf"/>
+      <stop offset="1" stop-color="#bda98b"/>
+    </linearGradient>
+    <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r="1.2" fill="#f3ede2" opacity=".07"/>
+    </pattern>
+    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="16"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="760" rx="30" fill="url(#bg)"/>
+  <rect width="1200" height="760" rx="30" fill="url(#glow)"/>
+  <rect width="1200" height="760" rx="30" fill="url(#teal)"/>
+  <rect width="1200" height="760" rx="30" fill="url(#dots)"/>
+
+  <!-- perspective floor grid -->
+  <g stroke="#f3ede2" stroke-opacity=".10" stroke-width="1">
+    <path d="M-80 760 L600 500 L1280 760"/>
+    <path d="M40 760 L600 500 L1160 760"/>
+    <path d="M160 760 L600 500 L1040 760"/>
+    <path d="M280 760 L600 500 L920 760"/>
+    <path d="M400 760 L600 500 L800 760"/>
+    <path d="M520 760 L600 500 L680 760"/>
+    <path d="M0 620 H1200"/>
+    <path d="M80 670 H1120"/>
+    <path d="M160 720 H1040"/>
+  </g>
+
+  <!-- table / cell -->
+  <path d="M250 590 L950 590 L1010 630 L190 630 Z" fill="#241f19" stroke="#f3ede2" stroke-opacity=".14"/>
+  <path d="M250 590 L950 590 L950 600 L250 600 Z" fill="#3a3127" opacity=".8"/>
+
+  <!-- robot arm -->
+  <g>
+    <ellipse cx="430" cy="632" rx="92" ry="14" fill="#000" opacity=".45" filter="url(#soft)"/>
+    <rect x="386" y="600" width="88" height="30" rx="10" fill="#2b261f" stroke="#f3ede2" stroke-opacity=".22"/>
+    <path d="M430 608 L470 478" stroke="url(#metal)" stroke-width="26" stroke-linecap="round"/>
+    <circle cx="470" cy="478" r="19" fill="#c2571f" stroke="#f3ede2" stroke-opacity=".35" stroke-width="2"/>
+    <circle cx="470" cy="478" r="7" fill="#1c1813"/>
+    <path d="M470 478 L612 426" stroke="url(#metal)" stroke-width="21" stroke-linecap="round"/>
+    <circle cx="612" cy="426" r="16" fill="#63b8a1" stroke="#f3ede2" stroke-opacity=".35" stroke-width="2"/>
+    <circle cx="612" cy="426" r="6" fill="#1c1813"/>
+    <path d="M612 426 L722 312" stroke="url(#metal)" stroke-width="16" stroke-linecap="round"/>
+    <circle cx="722" cy="312" r="13" fill="#c2571f" stroke="#f3ede2" stroke-opacity=".35" stroke-width="2"/>
+    <path d="M722 312 L790 278" stroke="#f1e4cf" stroke-width="8" stroke-linecap="round"/>
+    <path d="M790 278 L824 262" stroke="#f1e4cf" stroke-width="7" stroke-linecap="round"/>
+    <path d="M790 278 L818 296" stroke="#f1e4cf" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="824" cy="262" r="4" fill="#63b8a1"/>
+    <circle cx="818" cy="296" r="4" fill="#63b8a1"/>
+  </g>
+
+  <!-- objects + bounding boxes -->
+  <g>
+    <rect x="690" y="548" width="92" height="52" rx="4" fill="#4a3c2c" stroke="#c2571f" stroke-opacity=".55"/>
+    <rect x="676" y="532" width="120" height="82" fill="none" stroke="#63b8a1" stroke-dasharray="5 5" stroke-opacity=".65"/>
+    <rect x="820" y="556" width="58" height="44" rx="3" fill="#3d3326" stroke="#c2571f" stroke-opacity=".45"/>
+    <rect x="808" y="542" width="82" height="72" fill="none" stroke="#63b8a1" stroke-dasharray="5 5" stroke-opacity=".5"/>
+    <ellipse cx="736" cy="602" rx="46" ry="9" fill="#000" opacity=".35" filter="url(#soft)"/>
+  </g>
+
+  <!-- camera frustum -->
+  <g>
+    <path d="M1000 120 L760 360 L1010 470 Z" fill="#63b8a1" fill-opacity=".06" stroke="#63b8a1" stroke-opacity=".35" stroke-dasharray="6 6"/>
+    <rect x="984" y="104" width="34" height="24" rx="5" fill="#1c1813" stroke="#63b8a1" stroke-opacity=".7"/>
+    <circle cx="1001" cy="116" r="6" fill="#63b8a1" opacity=".8"/>
+    <path d="M1000 120 L1000 70" stroke="#63b8a1" stroke-opacity=".35" stroke-dasharray="4 4"/>
+  </g>
+
+  <!-- labels -->
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#f3ede2">
+    <text x="56" y="70" font-size="12" letter-spacing="4" fill="#c2571f">SIMULATION VIEWPORT</text>
+    <text x="56" y="98" font-size="11" letter-spacing="2" opacity=".55">SCENE 033 · G2 DUAL-ARM · RGB-D</text>
+    <text x="930" y="86" font-size="10" letter-spacing="2" opacity=".55">CAM 01 / 30 HZ</text>
+    <text x="56" y="690" font-size="11" letter-spacing="2" opacity=".55">L0 VALID · L1 MEASURABLE · L2 DISCRIMINATIVE · L3 ROBUST</text>
+    <text x="930" y="690" font-size="10" letter-spacing="2" opacity=".45">RENDER FINGERPRINT ✓</text>
+  </g>
+
+  <!-- protocol chips -->
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11">
+    <rect x="56" y="600" width="58" height="30" rx="15" fill="#c2571f" fill-opacity=".16" stroke="#c2571f" stroke-opacity=".55"/>
+    <text x="73" y="620" fill="#e9b49e">L0</text>
+    <rect x="124" y="600" width="58" height="30" rx="15" fill="#63b8a1" fill-opacity=".12" stroke="#63b8a1" stroke-opacity=".45"/>
+    <text x="141" y="620" fill="#9ed8c7">L1</text>
+    <rect x="192" y="600" width="58" height="30" rx="15" fill="#63b8a1" fill-opacity=".12" stroke="#63b8a1" stroke-opacity=".45"/>
+    <text x="209" y="620" fill="#9ed8c7">L2</text>
+    <rect x="260" y="600" width="58" height="30" rx="15" fill="#63b8a1" fill-opacity=".12" stroke="#63b8a1" stroke-opacity=".45"/>
+    <text x="277" y="620" fill="#9ed8c7">L3</text>
+  </g>
+
+  <!-- scanline -->
+  <rect x="0" y="120" width="1200" height="2" fill="url(#scan)">
+    <animate attributeName="y" values="80;680;80" dur="8s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;.9;0" dur="8s" repeatCount="indefinite"/>
+  </rect>
+
+  <rect x="1" y="1" width="1198" height="758" rx="29" fill="none" stroke="#f3ede2" stroke-opacity=".12"/>
+</svg>

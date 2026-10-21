@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" role="img" aria-labelledby="title">
+  <title id="title">Monogram portrait placeholder</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2a241d"/><stop offset="1" stop-color="#15120f"/>
+    </linearGradient>
+    <radialGradient id="g" cx=".7" cy=".2" r=".8">
+      <stop offset="0" stop-color="#c2571f" stop-opacity=".35"/><stop offset="1" stop-color="#c2571f" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="200" height="240" rx="18" fill="url(#bg)"/>
+  <rect width="200" height="240" rx="18" fill="url(#g)"/>
+  <circle cx="100" cy="92" r="38" fill="none" stroke="#f3ede2" stroke-opacity=".75" stroke-width="1.5"/>
+  <path d="M48 196 C52 150 76 132 100 132 C124 132 148 150 152 196" fill="none" stroke="#f3ede2" stroke-opacity=".55" stroke-width="1.5"/>
+  <text x="100" y="104" text-anchor="middle" font-family="Georgia, serif" font-size="30" fill="#f3ede2">SL</text>
+  <text x="100" y="222" text-anchor="middle" font-family="ui-monospace, monospace" font-size="8" letter-spacing="3" fill="#c2571f">PHYSICAL AI</text>
+</svg>

@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="title desc">
+  <title id="title">Real2Sim pipeline thumbnail</title>
+  <desc id="desc">A warm video frame with objects on a table, an arrow, and a cool wireframe USD scene.</desc>
+  <defs>
+    <linearGradient id="warm" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f0e4d2"/><stop offset="1" stop-color="#d9c2a5"/>
+    </linearGradient>
+    <linearGradient id="cool" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#162027"/><stop offset="1" stop-color="#0b1014"/>
+    </linearGradient>
+    <linearGradient id="arrow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#c2571f"/><stop offset="1" stop-color="#63b8a1"/>
+    </linearGradient>
+    <filter id="shadow"><feGaussianBlur stdDeviation="7"/></filter>
+  </defs>
+  <rect width="800" height="500" rx="22" fill="#1a1712"/>
+  <g>
+    <rect x="28" y="54" width="330" height="372" rx="14" fill="url(#warm)"/>
+    <rect x="28" y="54" width="330" height="30" rx="14" fill="#2a241d" opacity=".9"/>
+    <text x="46" y="74" font-family="ui-monospace, monospace" font-size="10" letter-spacing="2" fill="#f3ede2" opacity=".8">VIDEO / RGB</text>
+    <path d="M48 360 L338 360 L338 408 L48 408 Z" fill="#b99b77"/>
+    <path d="M48 360 L338 360 L320 378 L66 378 Z" fill="#cbb08e"/>
+    <ellipse cx="128" cy="368" rx="44" ry="8" fill="#7a5c3d" opacity=".35" filter="url(#shadow)"/>
+    <rect x="88" y="300" width="82" height="62" rx="4" fill="#8f6b48"/>
+    <path d="M88 300 L116 284 L198 284 L170 300 Z" fill="#b0865b"/>
+    <path d="M170 300 L198 284 L198 346 L170 362 Z" fill="#6d4f35"/>
+    <ellipse cx="258" cy="356" rx="42" ry="8" fill="#7a5c3d" opacity=".3" filter="url(#shadow)"/>
+    <rect x="228" y="296" width="60" height="62" rx="30" fill="#6f8d7a"/>
+    <ellipse cx="258" cy="296" rx="30" ry="9" fill="#8fae99"/>
+    <circle cx="292" cy="398" r="10" fill="#d7c4a7"/>
+  </g>
+  <g>
+    <path d="M384 240 H444" stroke="url(#arrow)" stroke-width="3" stroke-linecap="round" stroke-dasharray="7 7"/>
+    <path d="M436 230 L450 240 L436 250" fill="none" stroke="#63b8a1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="384" y="222" font-family="ui-monospace, monospace" font-size="9" letter-spacing="2" fill="#63b8a1">RECONSTRUCT</text>
+  </g>
+  <g>
+    <rect x="470" y="54" width="302" height="372" rx="14" fill="url(#cool)" stroke="#63b8a1" stroke-opacity=".25"/>
+    <rect x="470" y="54" width="302" height="30" rx="14" fill="#0d1215"/>
+    <text x="488" y="74" font-family="ui-monospace, monospace" font-size="10" letter-spacing="2" fill="#63b8a1">USD / SIM</text>
+    <g stroke="#63b8a1" stroke-opacity=".18">
+      <path d="M470 360 H772"/><path d="M470 390 H772"/><path d="M470 420 H772"/>
+      <path d="M520 426 L620 330 L720 426"/><path d="M570 426 L620 330 L670 426"/>
+    </g>
+    <g fill="none" stroke="#63b8a1" stroke-width="1.6">
+      <path d="M532 300 L590 270 L660 270 L602 300 Z"/>
+      <path d="M532 300 L532 360 L602 360 L602 300"/>
+      <path d="M602 300 L660 270 L660 330 L602 360"/>
+      <path d="M682 296 L724 296 L724 360 L682 360 Z"/>
+      <ellipse cx="703" cy="296" rx="21" ry="7"/>
+      <circle cx="690" cy="398" r="14"/>
+    </g>
+    <g stroke="#c2571f" stroke-opacity=".6" stroke-dasharray="4 4" fill="none">
+      <rect x="522" y="260" width="146" height="108"/>
+      <rect x="674" y="286" width="58" height="82"/>
+    </g>
+    <g fill="#63b8a1" opacity=".8">
+      <circle cx="532" cy="300" r="3"/><circle cx="602" cy="300" r="3"/><circle cx="660" cy="270" r="3"/>
+    </g>
+    <text x="492" y="406" font-family="ui-monospace, monospace" font-size="9" letter-spacing="1.5" fill="#f3ede2" opacity=".45">MESH + COLLISION + MATERIAL</text>
+  </g>
+  <text x="28" y="470" font-family="ui-monospace, monospace" font-size="10" letter-spacing="2" fill="#f3ede2" opacity=".45">SINGLE VIDEO → INTERACTIVE ASSET</text>
+  <rect x="1" y="1" width="798" height="498" rx="21" fill="none" stroke="#f3ede2" stroke-opacity=".1"/>
+</svg>

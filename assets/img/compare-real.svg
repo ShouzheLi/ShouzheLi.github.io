@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" role="img" aria-labelledby="title desc">
+  <title id="title">Real scene reference</title>
+  <desc id="desc">A warm real-world tabletop scene with a box, a cylinder, a sphere, and a cup.</desc>
+  <defs>
+    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f6eddd"/><stop offset="1" stop-color="#e5d2b7"/>
+    </linearGradient>
+    <linearGradient id="table" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#c9a97f"/><stop offset="1" stop-color="#a47f55"/>
+    </linearGradient>
+    <linearGradient id="boxFront" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#a9764a"/><stop offset="1" stop-color="#82552f"/>
+    </linearGradient>
+    <linearGradient id="cyl" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5f7f6d"/><stop offset=".45" stop-color="#8fae99"/><stop offset="1" stop-color="#4f6c5c"/>
+    </linearGradient>
+    <radialGradient id="sphere" cx=".35" cy=".3" r=".75">
+      <stop offset="0" stop-color="#e08a6a"/><stop offset=".55" stop-color="#b34a32"/><stop offset="1" stop-color="#7d2b1e"/>
+    </radialGradient>
+    <filter id="blur"><feGaussianBlur stdDeviation="12"/></filter>
+    <filter id="soft"><feGaussianBlur stdDeviation="4"/></filter>
+  </defs>
+  <rect width="900" height="600" fill="url(#wall)"/>
+  <path d="M0 0 H420 L250 600 H0 Z" fill="#fff8ea" opacity=".38"/>
+  <path d="M900 0 H620 L760 600 H900 Z" fill="#c9ad8a" opacity=".14"/>
+  <rect y="470" width="900" height="130" fill="#d8c2a4"/>
+  <path d="M70 380 H830 L870 470 H30 Z" fill="url(#table)"/>
+  <path d="M30 470 H870 V520 H30 Z" fill="#8d6a45"/>
+  <path d="M30 470 H870" stroke="#6f5133" stroke-opacity=".35"/>
+  <!-- shadows -->
+  <ellipse cx="270" cy="382" rx="78" ry="12" fill="#6f5133" opacity=".32" filter="url(#blur)"/>
+  <ellipse cx="470" cy="392" rx="48" ry="10" fill="#6f5133" opacity=".3" filter="url(#blur)"/>
+  <ellipse cx="625" cy="448" rx="62" ry="12" fill="#6f5133" opacity=".38" filter="url(#blur)"/>
+  <ellipse cx="742" cy="404" rx="30" ry="7" fill="#6f5133" opacity=".28" filter="url(#blur)"/>
+  <!-- box -->
+  <path d="M210 300 L250 280 L370 280 L330 300 Z" fill="#c08b58"/>
+  <path d="M210 300 L330 300 L330 380 L210 380 Z" fill="url(#boxFront)"/>
+  <path d="M330 300 L370 280 L370 360 L330 380 Z" fill="#6d4427"/>
+  <path d="M210 300 L330 300" stroke="#d9a06a" stroke-opacity=".55"/>
+  <path d="M250 280 L250 360" stroke="#8c5c36" stroke-opacity=".35"/>
+  <!-- cylinder -->
+  <path d="M430 300 H500 V390 H430 Z" fill="url(#cyl)"/>
+  <ellipse cx="465" cy="300" rx="35" ry="10" fill="#a9c4b1"/>
+  <ellipse cx="465" cy="390" rx="35" ry="10" fill="#4f6c5c"/>
+  <ellipse cx="465" cy="300" rx="35" ry="10" fill="none" stroke="#c7dccf" stroke-opacity=".5"/>
+  <!-- sphere -->
+  <circle cx="625" cy="393" r="57" fill="url(#sphere)"/>
+  <ellipse cx="607" cy="372" rx="17" ry="11" fill="#ffd9c9" opacity=".38" filter="url(#soft)"/>
+  <!-- cup -->
+  <path d="M720 336 H764 V400 H720 Z" fill="#eee2cf"/>
+  <ellipse cx="742" cy="336" rx="22" ry="7" fill="#fbf4e8"/>
+  <path d="M764 350 C788 350 788 384 764 384" fill="none" stroke="#d7c6ad" stroke-width="6"/>
+  <!-- labels -->
+  <text x="34" y="566" font-family="ui-monospace, monospace" font-size="11" letter-spacing="3" fill="#6f5133" opacity=".7">REAL / RGB</text>
+</svg>
