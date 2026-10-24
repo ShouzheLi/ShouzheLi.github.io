@@ -69,6 +69,7 @@ Settings → Pages → Custom domain. Add a `CNAME` file with your domain if you
 | Name, role, bio | `index.html` (hero + about) |
 | Email / GitHub / links | `index.html`, project pages, footer |
 | Colors, fonts, spacing | `assets/css/style.css` (`:root` variables) |
+| Bilingual copy | `assets/js/i18n.js` (EN/ZH dictionaries) |
 | Home project cards | `index.html` (`#work`) |
 | Capabilities page | `capabilities/index.html` (six-layer stack + depth table) |
 | Projects list | `projects/index.html` |
@@ -88,6 +89,16 @@ Settings → Pages → Custom domain. Add a `CNAME` file with your domain if you
 2. Edit `projects/my-project/index.html`: title, lede, meta, abstract, stats, sections, BibTeX.
 3. Replace the hero image and comparison images; add your video.
 4. Add a card in `projects/index.html` (and optionally `index.html`), with `data-tags` for filtering.
+
+### Bilingual content (EN / 中文)
+
+The header toggle switches the site between English and Chinese. The initial language follows `localStorage` (`pa-lang`), then the browser's `navigator.languages`; `?lang=zh` or `?lang=en` overrides it once and stores the choice.
+
+- **Home page:** fully translated. All strings live in `assets/js/i18n.js`.
+- **Subpages:** the shared navigation, footer, toggle, and 404 page are translated. Page bodies remain English for now and show a small “Chinese version in progress” notice.
+- **Translate a subpage:** add `data-i18n="key"` to plain text, `data-i18n-html="key"` when the value contains inline markup such as `<em>`, and `data-i18n-attr="alt:key"` / `data-i18n-attr="aria-label:key"` for attributes. Add the key to both dictionaries in `assets/js/i18n.js`.
+- **Remove the notice:** when a page is fully translated, set `<body data-i18n-complete="true" ...>`.
+- **Chinese line breaking:** wrap short terms that must not split with `<span class="keep">…</span>` (for example `仿真`). Avoid `white-space: nowrap` on long sentences.
 
 ### Media guidelines
 
@@ -119,6 +130,7 @@ site/
 ├── assets/
 │   ├── css/style.css             # design system + components
 │   ├── js/main.js                # theme, nav, reveal, slider, carousel, copy, lightbox
+│   ├── js/i18n.js                # EN/ZH dictionaries + language toggle and persistence
 │   ├── img/                      # SVG visuals, og-cover.png, favicon
 │   └── video/                    # demo.mp4 + demo-poster.jpg
 ├── .github/workflows/pages.yml   # ready-to-use Actions deploy (root layout)
@@ -138,7 +150,7 @@ site/
 - **Accessibility**: skip link, focus styles, `aria` labels, alt text, reduced-motion support.
 - **SEO**: title, description, Open Graph, Twitter card, semantic headings.
 - **Real↔sim slider**: a small JS `input[type=range]` updates a CSS variable; no library.
-- **Reading progress** on detail pages; **theme toggle** persists in `localStorage`.
+- **Reading progress** on detail pages; **theme toggle** and **EN/中文 toggle** persist in `localStorage`.
 - **Project filters** on the listing page; cards are static HTML with `data-tags`.
 
 ---

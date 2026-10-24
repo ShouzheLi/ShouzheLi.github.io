@@ -26,7 +26,7 @@
   --radius-sm: 12px;
   --max: 1180px;
   --narrow: 770px;
-  --serif: "Iowan Old Style", "Palatino Linotype", "Songti SC", "Noto Serif SC", Georgia, serif;
+  --serif: "Iowan Old Style", "Palatino Linotype", "Songti SC", "Noto Serif SC", "Source Han Serif SC", "SimSun", Georgia, serif;
   --sans: "Inter", "PingFang SC", "Microsoft YaHei", system-ui, -apple-system, sans-serif;
   --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   --ease: cubic-bezier(.16, 1, .3, 1);
@@ -54,9 +54,10 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 84px; -webkit-text-size-adjust: 100%; }
+html { scroll-behavior: smooth; scroll-padding-top: 84px; -webkit-text-size-adjust: 100%; overflow-x: clip; }
 body {
   margin: 0;
+  overflow-x: clip;
   color: var(--ink);
   background:
     radial-gradient(900px 520px at 86% -8%, var(--accent-soft), transparent 62%),
@@ -427,7 +428,7 @@ button, input { font: inherit; }
   .reveal { opacity: 1; transform: none; }
 }
 @media print {
-  .site-header, .site-footer, .detail-actions, .carousel-btn, .copy-btn, .read-progress { display: none !important; }
+  .site-header, .site-footer, .detail-actions, .carousel-btn, .copy-btn, .read-progress, .lang-toggle, .lang-notice { display: none !important; }
   body { background: #fff; color: #000; }
   .detail-section { break-inside: avoid; }
 }
@@ -520,4 +521,56 @@ figure { margin: 0; }
   .project-grid--featured .project-card:first-child { grid-column: auto; }
   .flow-grid { grid-template-columns: 1fr 1fr; }
   .depth-table { display: block; overflow-x: auto; }
+}
+
+/* ---------- language switch ---------- */
+.lang-toggle {
+  display: inline-flex; align-items: center; gap: 2px; padding: 3px;
+  border: 1px solid var(--line); border-radius: 999px; background: var(--bg-elev);
+}
+.lang-toggle button {
+  appearance: none; border: 0; background: transparent; color: var(--muted);
+  font-family: var(--mono); font-size: 10px; letter-spacing: .04em; line-height: 1;
+  padding: 5px 7px; border-radius: 999px; cursor: pointer;
+  transition: background .2s, color .2s;
+}
+.lang-toggle button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+.lang-toggle button:not([aria-pressed="true"]):hover { color: var(--ink); }
+
+.lang-notice { border-bottom: 1px solid var(--line); background: var(--accent-soft); }
+.lang-notice .wrap {
+  display: flex; align-items: center; gap: 10px; padding: 9px 0;
+  color: var(--muted); font-size: 12px; line-height: 1.5;
+}
+.lang-notice strong {
+  font-family: var(--mono); font-size: 9px; letter-spacing: .12em; color: var(--accent);
+}
+
+/* Keep short Chinese emphasis terms from splitting across lines (e.g. 仿/真). */
+.keep { white-space: nowrap; }
+
+/* Chinese typography: CJK serif has no true italic, and tight Latin tracking looks cramped. */
+html[lang="zh-CN"] .hero h1,
+html[lang="zh-CN"] .section-title,
+html[lang="zh-CN"] .detail-title { letter-spacing: 0; line-height: 1.22; text-wrap: balance; }
+html[lang="zh-CN"] .hero h1 em,
+html[lang="zh-CN"] .section-title em,
+html[lang="zh-CN"] .detail-title em { font-style: normal; }
+html[lang="zh-CN"] .kicker,
+html[lang="zh-CN"] .eyebrow { letter-spacing: .14em; }
+html[lang="zh-CN"] .hero-lede,
+html[lang="zh-CN"] .section-lede,
+html[lang="zh-CN"] .detail-lede { line-height: 1.9; }
+
+@media (max-width: 760px) {
+  .header-actions { gap: 8px; }
+  .lang-toggle button { padding: 5px 6px; }
+}
+@media (max-width: 420px) {
+  .header-inner { gap: 12px; }
+  .header-actions { gap: 6px; }
+  .brand-text small { display: none; }
+  .icon-btn { width: 34px; height: 34px; }
+  .lang-toggle { padding: 2px; }
+  .lang-toggle button { padding: 5px; font-size: 9.5px; }
 }
