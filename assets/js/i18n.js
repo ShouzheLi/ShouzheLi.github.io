@@ -149,7 +149,7 @@
       "notice.subpage": "此页的中文版正在整理，以下保留英文原文。",
 
       "home.hero.kicker": "具身智能 · 全栈 · 仿真",
-      "home.hero.title": "从数据到部署，我搭建具身智能的<em class=\"keep\">完整闭环。</em>",
+      "home.hero.title": "从数据到部署，我搭建<span class=\"keep\">完整的</span><em class=\"keep\">具身智能闭环。</em>",
       "home.hero.lede": "我最深的是仿真与评测，但覆盖面是整条全栈：数据引擎、VLA/RSI、Real2Sim、部署，以及决定机器人能否真正交付的经济性。",
       "home.hero.cta1": "查看能力地图",
       "home.hero.cta2": "查看项目",
