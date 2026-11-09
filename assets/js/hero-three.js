@@ -54,18 +54,18 @@ function init(host) {
   const robot = new THREE.Group();
   scene.add(robot);
 
-  const grid = new THREE.GridHelper(18, 36, 0xcfcfcf, 0xe4e4e4);
+  const grid = new THREE.GridHelper(18, 36, 0xb2b2b2, 0xd4d4d4);
   grid.position.y = 0.002;
   grid.material.transparent = true;
-  grid.material.opacity = 0.35;
+  grid.material.opacity = 0.62;
   scene.add(grid);
 
   const hash = (i, s) => {
     const x = Math.sin(i * 12.9898 + s * 78.233) * 43758.5453;
     return x - Math.floor(x);
   };
-  const COLS = 46;
-  const ROWS = 34;
+  const COLS = 56;
+  const ROWS = 42;
   const COUNT = COLS * ROWS;
   const positions = new Float32Array(COUNT * 3);
   let idx = 0;
@@ -73,7 +73,7 @@ function init(host) {
     for (let iz = 0; iz < ROWS; iz++) {
       const x = 0.05 + (ix / (COLS - 1)) * 4.2;
       const z = -1.8 + (iz / (ROWS - 1)) * 3.2;
-      const y = 0.28 + Math.sin(x * 0.9 + z * 0.6) * 0.16 + hash(ix * 97 + iz, 4) * 0.05;
+      const y = 0.42 + Math.sin(x * 0.9 + z * 0.6) * 0.22 + hash(ix * 97 + iz, 4) * 0.06;
       positions[idx * 3] = x;
       positions[idx * 3 + 1] = y;
       positions[idx * 3 + 2] = z;
@@ -83,18 +83,25 @@ function init(host) {
   const pGeo = new THREE.BufferGeometry();
   pGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
   const pMat = new THREE.ShaderMaterial({
-    uniforms: { uTime: { value: 0 }, uColor: { value: new THREE.Color(0x3f5f92) } },
+    uniforms: {
+      uTime: { value: 0 },
+      uColor: { value: new THREE.Color(0x466a9c) },
+      uMouse: { value: new THREE.Vector3(1.6, 0, 0) }
+    },
     vertexShader: `
       uniform float uTime;
+      uniform vec3 uMouse;
       varying float vAlpha;
       void main() {
         vec3 p = position;
         p.y += sin(p.x * 0.8 + uTime * 0.3) * 0.05;
         p.x += cos(p.z * 0.9 + uTime * 0.22) * 0.04;
+        float d = distance(p.xz, uMouse.xz);
+        float glow = smoothstep(1.5, 0.0, d);
         vec4 mv = modelViewMatrix * vec4(p, 1.0);
-        gl_PointSize = clamp(2.4 * (6.0 / -mv.z), 1.0, 3.2);
+        gl_PointSize = clamp((3.0 + glow * 5.0) * (6.0 / -mv.z), 1.2, 9.0);
         gl_Position = projectionMatrix * mv;
-        vAlpha = 0.18 + 0.32 * abs(sin(p.z * 0.8 + uTime * 0.2));
+        vAlpha = (0.20 + 0.34 * abs(sin(p.z * 0.8 + uTime * 0.2))) * (0.65 + glow * 1.2);
       }
     `,
     fragmentShader: `
@@ -207,22 +214,24 @@ function init(host) {
     ty += (py - ty) * 0.05;
     tp += (sp - tp) * 0.05;
 
-    camera.position.x += ((portrait ? 0.0 : -0.2) + tx * 0.26 - camera.position.x) * 0.06;
-    camera.position.y += ((portrait ? 1.45 : 1.35) - ty * 0.12 + tp * 0.05 - camera.position.y) * 0.06;
+    camera.position.x += ((portrait ? 0.0 : -0.2) + tx * 0.32 - camera.position.x) * 0.06;
+    camera.position.y += ((portrait ? 1.75 : 1.35) - ty * 0.12 + tp * 0.05 - camera.position.y) * 0.06;
     camera.lookAt(look);
 
-    robot.rotation.y = -0.28 + tx * 0.14 + tp * 0.22;
-    robot.position.y = Math.sin(t * 0.7) * 0.006;
+    robot.rotation.y = -0.28 + tx * 0.30 + tp * 0.25;
+    robot.position.x = (portrait ? 0.45 : 1.25) + tx * 0.12;
+    robot.position.y = tp * 0.06 + Math.sin(t * 0.7) * 0.006;
 
     pMat.uniforms.uTime.value = t;
+    pMat.uniforms.uMouse.value.set(0.6 + (tx + 1) * 1.7, 0, 0.1 - ty * 1.3);
     const sh = arm['right_shoulder_pitch_link'];
-    if (sh) sh.node.rotation.x = sh.base.x + tx * 0.20 + Math.sin(t * 0.5) * 0.03;
+    if (sh) sh.node.rotation.x = sh.base.x + Math.sin(t * 0.5) * 0.03;
     const sr = arm['right_shoulder_roll_link'];
-    if (sr) sr.node.rotation.z = sr.base.z - ty * 0.12;
+    if (sr) sr.node.rotation.z = sr.base.z + Math.sin(t * 0.4) * 0.02;
     const ep = arm['right_elbow_pitch_link'];
-    if (ep) ep.node.rotation.x = ep.base.x + 0.10 + Math.sin(t * 0.6 + 1) * 0.04;
+    if (ep) ep.node.rotation.x = ep.base.x + 0.06 + Math.sin(t * 0.6 + 1) * 0.03;
     const palm = arm['right_palm_link'];
-    if (palm) palm.node.rotation.y = palm.base.y + tx * 0.18;
+    if (palm) palm.node.rotation.y = palm.base.y + Math.sin(t * 0.5) * 0.04;
 
     renderer.render(scene, camera);
   }
