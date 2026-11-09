@@ -51,29 +51,26 @@
   </header>
 
   <main id="main">
-    <section class="hero">
-      <div class="wrap">
-        <div class="hero-grid">
-          <div>
-            <p class="eyebrow"><span class="t-en">Embodied AI · simulation · evaluation</span><span class="t-zh">具身智能 · 仿真 · 评测</span></p>
-            <h1 class="display">
-              <span class="t-en">Shouzhe Li</span>
-              <span class="t-zh">李守哲</span>
-            </h1>
-            <p class="hero-role"><span class="t-en">Robotics full-stack engineer · perception, control, simulation, evaluation, deployment</span><span class="t-zh">机器人全栈工程师 · 感知、控制、仿真评测、训练与部署</span></p>
-            <p class="lede">
-              <span class="t-en">I build the measurement layer for embodied AI: simulation environments that match hardware, evaluation that makes VLA scores comparable, and reconstruction pipelines that turn video into interactive assets.</span>
-              <span class="t-zh">我做具身智能的量测层：与硬件对齐的仿真环境、让 VLA 分数可比的评测体系，以及把视频变成可交互资产的 Real2Sim 管线。</span>
-            </p>
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="mailto:sli649@wisc.edu">Email <span aria-hidden="true">&rarr;</span></a>
-              <a class="btn" href="https://github.com/ShouzheLi" target="_blank" rel="noopener">GitHub <span aria-hidden="true">&nearr;</span></a>
-            </div>
-          </div>
-          <div class="hero-media hero-scene">
-            <img class="hero-fallback" src="/assets/img/hero-poster.svg" alt="">
-            <div class="hero-three" id="hero-three" aria-hidden="true"></div>
-            <span class="media-note"><span class="t-en">REAL-TIME 3D · drag the pointer</span><span class="t-zh">实时 3D · 移动指针</span></span>
+        <section class="hero hero--stage">
+      <div class="hero-stage" aria-hidden="true">
+        <img class="hero-fallback" src="/assets/img/hero-poster.svg" alt="">
+        <div class="hero-three" id="hero-three"></div>
+      </div>
+      <div class="wrap hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="t-en">Robotics · full stack · perception to deployment</span><span class="t-zh">机器人 · 全栈 · 从感知到部署</span></p>
+          <h1 class="display">
+            <span class="t-en">Shouzhe Li</span>
+            <span class="t-zh">李守哲</span>
+          </h1>
+          <p class="hero-role"><span class="t-en">Robotics full-stack engineer · perception, control, simulation, evaluation, deployment</span><span class="t-zh">机器人全栈工程师 · 感知、控制、仿真评测、训练与部署</span></p>
+          <p class="lede">
+            <span class="t-en">I work across the robot stack: perception and state estimation, motion control, simulation and evaluation, VLA post-training, and deployment. The through-line is turning a physical process into a system that can be measured, trained against and shipped.</span>
+            <span class="t-zh">我做机器人全栈：感知与状态估计、运动控制、仿真与评测、VLA 后训练、部署。主线只有一条——把物理过程变成可量测、可训练、可交付的系统。</span>
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="mailto:sli649@wisc.edu">Email <span aria-hidden="true">&rarr;</span></a>
+            <a class="btn" href="https://github.com/ShouzheLi" target="_blank" rel="noopener">GitHub <span aria-hidden="true">&nearr;</span></a>
           </div>
         </div>
       </div>
@@ -100,10 +97,6 @@
             <span class="n">03</span>
             <span><span class="t-en">Engineering base from outside robotics: scheduling optimization, 200k lines of industrial C# code, OPC telemetry — the interfaces that decide whether a system ships.</span><span class="t-zh">工程底子来自机器人之外：排产优化、20 万行工业 C# 代码、OPC 采集——决定系统能不能交付的往往是这些接口。</span></span>
           </li>
-          <li>
-            <span class="n">04</span>
-            <span><span class="t-en">Every public claim carries a date, a condition and a boundary; what is not covered is listed on the capabilities page.</span><span class="t-zh">每条公开声明都带日期、条件与边界；没覆盖的部分列在能力页。</span></span>
-          </li>
         </ul>
       </div>
     </section>
@@ -116,7 +109,7 @@
             <h2 class="section-title"><span class="t-en">Research focus</span><span class="t-zh">研究兴趣</span></h2>
           </div>
         </div>
-                <div class="interest-grid reveal">
+                        <div class="interest-grid reveal">
           <article class="interest">
             <h3><span class="t-en">Perception &amp; state estimation</span><span class="t-zh">感知与状态估计</span></h3>
             <p><span class="t-en">Cameras and calibration, 3D reconstruction, real2sim assets, and the state estimates a policy actually consumes.</span><span class="t-zh">相机与标定、3D 重建、Real2Sim 资产，以及策略真正消费的状态估计。</span></p>
@@ -130,7 +123,11 @@
             <p><span class="t-en">Isaac Sim / Lab and Newton, rendering fidelity, protocols, and a sim-real gap that is measured rather than assumed.</span><span class="t-zh">Isaac Sim / Lab 与 Newton、渲染保真、评测协议，以及被量测而不是被假设的虚实差距。</span></p>
           </article>
           <article class="interest">
-            <h3><span class="t-en">Learning, training &amp; deployment</span><span class="t-zh">学习、训练与部署</span></h3>
+            <h3><span class="t-en">World models &amp; RSI</span><span class="t-zh">世界模型与 RSI</span></h3>
+            <p><span class="t-en">Prediction, causal reasoning and recursive self-improvement: how a policy gets better without a human in the loop.</span><span class="t-zh">预测、因果推理与递归自我改进：策略如何在没有人类介入的情况下变强。</span></p>
+          </article>
+          <article class="interest">
+            <h3><span class="t-en">Training &amp; deployment</span><span class="t-zh">训练与部署</span></h3>
             <p><span class="t-en">VLA post-training, PPO and imitation data, model serving, and on-robot evaluation.</span><span class="t-zh">VLA 后训练、PPO 与模仿数据、模型服务，以及真机评测。</span></p>
           </article>
         </div>

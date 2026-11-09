@@ -19,6 +19,8 @@ content/radar/*.md       One file per radar signal
 scripts/build_pages.py   Regenerates the two list pages
 scripts/check_site.py    Read-only checks: links, fields, facts expiry, radar freshness, i18n parity, chrome
 assets/                  CSS, JS, fonts, images
+assets/models/           g1_draco.glb: Unitree G1 from the local Isaac Sim asset library, converted with Blender and Draco-compressed
+assets/js/vendor/        Three r160, GLTFLoader, DRACOLoader, decoder, RoomEnvironment
 ```
 
 ## Build and check
@@ -98,7 +100,7 @@ The pre-redesign version is preserved on branch `backup/pre-redesign-2026-11-10`
 
 ## Pending
 
-- Hero: Three.js scene (`assets/js/hero-three.js`, vendored Three r160) with a static SVG fallback; the model is procedural, not a CAD export.
+- Hero: full-bleed Three.js scene behind the name (`assets/js/hero-three.js`), using a Unitree G1 USD from the local Isaac Sim install converted to Draco GLB. Pointer and scroll drive the camera and model; a static SVG fallback shows until the scene is ready.
 - GitHub repositories for the project pages; all except SIM-EVAL are marked "GitHub pending".
 - Project media (stills or clips) for the five new case pages; they are text-only for now.
 
