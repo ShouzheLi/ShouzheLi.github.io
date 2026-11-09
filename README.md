@@ -5,8 +5,8 @@ Static site. No framework, no build step at deploy time. The content model lives
 ## Structure
 
 ```
-index.html               Home: self-introduction (profile, focus, experience, skills) + canvas hero
-capabilities/index.html  Full 9-layer x 4-dimension matrix, ratings, gaps, upgrade rules
+index.html               Home: self-introduction (profile, focus, experience, skills) + Three.js hero
+capabilities/index.html  9x4 matrix, selected work, latest records, gaps, upgrade rules
 record/index.html        Generated from content/evidence/*.md
 radar/index.html         Generated from content/radar/*.md
 projects/                Seven case pages: problem, approach, result, boundary
@@ -98,7 +98,7 @@ The pre-redesign version is preserved on branch `backup/pre-redesign-2026-11-10`
 
 ## Pending
 
-- Hero: canvas-drawn arm and ribbons (`assets/js/hero-scene.js`) with a static SVG fallback; a rendered video can replace it later.
+- Hero: Three.js scene (`assets/js/hero-three.js`, vendored Three r160) with a static SVG fallback; the model is procedural, not a CAD export.
 - GitHub repositories for the project pages; all except SIM-EVAL are marked "GitHub pending".
 - Project media (stills or clips) for the five new case pages; they are text-only for now.
 

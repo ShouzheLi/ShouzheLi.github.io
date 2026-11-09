@@ -275,9 +275,29 @@ def inject_home(evidence, radar):
     return changed
 
 
+def inject_capabilities(evidence):
+    path = BASE / "capabilities" / "index.html"
+    if not path.is_file():
+        return []
+    html = read_text(path)
+    if "@CAP_RECORDS" not in html:
+        return []
+
+    def item(entry, index):
+        return (f'<li><span class="no">{index + 1:02d}</span>'
+                f'<a href="/record/index.html#{entry["id"]}">{dual(entry.get("title_en",""), entry.get("title_zh",""))}</a>'
+                f'<span class="when">{entry.get("date","")}</span></li>')
+
+    latest = "\n".join(item(e, i) for i, e in enumerate(evidence[:6]))
+    html = re.sub(r"<!-- @CAP_RECORDS -->.*?<!-- @/CAP_RECORDS -->",
+                  f"<!-- @CAP_RECORDS -->\n{latest}\n<!-- @/CAP_RECORDS -->", html, flags=re.S)
+    return [write_if_changed(path, html)]
+
+
 def main():
     evidence, radar, changed = build_lists()
     changed += inject_home(evidence, radar)
+    changed += inject_capabilities(evidence)
     print(f"evidence={len(evidence)} radar={len(radar)}")
     print("changed files:", sum(1 for c in changed if c))
     return 0

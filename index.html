@@ -13,6 +13,9 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <script type="importmap">{"imports":{"three":"/assets/js/vendor/three.module.min.js"}}</script>
+  <link rel="modulepreload" href="/assets/js/vendor/three.module.min.js">
+  <link rel="modulepreload" href="/assets/js/hero-three.js">
   <noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
 </head>
 <body data-page="home">
@@ -57,7 +60,7 @@
               <span class="t-en">Shouzhe Li</span>
               <span class="t-zh">李守哲</span>
             </h1>
-            <p class="hero-role"><span class="t-en">Embodied AI engineer · simulation, evaluation, real2sim</span><span class="t-zh">具身智能工程师 · 仿真 / 评测 / Real2Sim</span></p>
+            <p class="hero-role"><span class="t-en">Robotics full-stack engineer · perception, control, simulation, evaluation, deployment</span><span class="t-zh">机器人全栈工程师 · 感知、控制、仿真评测、训练与部署</span></p>
             <p class="lede">
               <span class="t-en">I build the measurement layer for embodied AI: simulation environments that match hardware, evaluation that makes VLA scores comparable, and reconstruction pipelines that turn video into interactive assets.</span>
               <span class="t-zh">我做具身智能的量测层：与硬件对齐的仿真环境、让 VLA 分数可比的评测体系，以及把视频变成可交互资产的 Real2Sim 管线。</span>
@@ -69,8 +72,8 @@
           </div>
           <div class="hero-media hero-scene">
             <img class="hero-fallback" src="/assets/img/hero-poster.svg" alt="">
-            <canvas id="hero-canvas" role="img" aria-label="Articulated robot arm with flowing ribbons"></canvas>
-            <span class="media-note"><span class="t-en">LIVE CANVAS · drawn in the browser</span><span class="t-zh">实时绘制 · Canvas</span></span>
+            <div class="hero-three" id="hero-three" aria-hidden="true"></div>
+            <span class="media-note"><span class="t-en">REAL-TIME 3D · drag the pointer</span><span class="t-zh">实时 3D · 移动指针</span></span>
           </div>
         </div>
       </div>
@@ -84,18 +87,18 @@
             <h2 class="section-title"><span class="t-en">Profile</span><span class="t-zh">个人简介</span></h2>
           </div>
         </div>
-        <ul class="intro-list reveal">
+                <ul class="intro-list reveal">
           <li>
             <span class="n">01</span>
-            <span><span class="t-en">Worked in operations research, supply chain and embodied simulation. The common task: turn a physical process into a measurable model.</span><span class="t-zh">做过运筹、供应链与具身仿真。共同的任务：把物理过程变成可量测的模型。</span></span>
+            <span><span class="t-en">Full-stack coverage: perception, motion control, simulation, evaluation, data and training, serving — not a single layer.</span><span class="t-zh">全栈覆盖：感知、运动控制、仿真、评测、数据与训练、模型服务——不是单点能力。</span></span>
           </li>
           <li>
             <span class="n">02</span>
-            <span><span class="t-en">Deepest work: simulation evaluation on Isaac Sim / Isaac Lab — scenes, rendering fidelity, protocols and silent-failure audits.</span><span class="t-zh">最深的一层：Isaac Sim / Isaac Lab 上的仿真评测——场景、渲染保真、协议与静默失效审计。</span></span>
+            <span><span class="t-en">Built real systems: 49 video-reconstructed assets, cloth parameter fitting, a soft-body data flywheel, and evaluation across 11 VLA checkpoints.</span><span class="t-zh">做过真实系统：49 项视频重建资产、布料参数拟合、柔性物体数据飞轮，以及 11 个 VLA 档案的评测。</span></span>
           </li>
           <li>
             <span class="n">03</span>
-            <span><span class="t-en">Range across the loop: data contracts, VLA post-training, motion control, model serving and deployment.</span><span class="t-zh">覆盖整个闭环：数据契约、VLA 后训练、运动控制、模型服务与部署。</span></span>
+            <span><span class="t-en">Engineering base from outside robotics: scheduling optimization, 200k lines of industrial C# code, OPC telemetry — the interfaces that decide whether a system ships.</span><span class="t-zh">工程底子来自机器人之外：排产优化、20 万行工业 C# 代码、OPC 采集——决定系统能不能交付的往往是这些接口。</span></span>
           </li>
           <li>
             <span class="n">04</span>
@@ -113,22 +116,22 @@
             <h2 class="section-title"><span class="t-en">Research focus</span><span class="t-zh">研究兴趣</span></h2>
           </div>
         </div>
-        <div class="interest-grid reveal">
+                <div class="interest-grid reveal">
           <article class="interest">
-            <h3><span class="t-en">Simulation evaluation &amp; Sim-to-Real</span><span class="t-zh">仿真评测与 Sim-to-Real</span></h3>
-            <p><span class="t-en">Protocol design, rendering fidelity, and a sim-real gap that is measured rather than assumed.</span><span class="t-zh">协议设计、渲染保真，以及被量测而不是被假设的虚实差距。</span></p>
+            <h3><span class="t-en">Perception &amp; state estimation</span><span class="t-zh">感知与状态估计</span></h3>
+            <p><span class="t-en">Cameras and calibration, 3D reconstruction, real2sim assets, and the state estimates a policy actually consumes.</span><span class="t-zh">相机与标定、3D 重建、Real2Sim 资产，以及策略真正消费的状态估计。</span></p>
           </article>
           <article class="interest">
-            <h3><span class="t-en">Real2Sim &amp; 4D reconstruction</span><span class="t-zh">Real2Sim 与 4D 重建</span></h3>
-            <p><span class="t-en">Video to interactive USD: camera pose, geometry, contact and per-view comparison.</span><span class="t-zh">从视频到可交互 USD：相机位姿、几何、接触与逐视角对照。</span></p>
+            <h3><span class="t-en">Motion control &amp; manipulation</span><span class="t-zh">运动控制与操作</span></h3>
+            <p><span class="t-en">Kinematics, IK and damped servo, teleoperation, grasp and place — simulated first, then measured.</span><span class="t-zh">运动学、IK 与阻尼伺服、遥操、抓取与放置——先在仿真里跑通，再上真机量测。</span></p>
           </article>
           <article class="interest">
-            <h3><span class="t-en">Soft-body simulation &amp; manipulation</span><span class="t-zh">柔性物体仿真与操作</span></h3>
-            <p><span class="t-en">Cloth and deformable objects: parameter fitting, data flywheel and manipulation episodes.</span><span class="t-zh">布料与可变形物体：参数拟合、数据飞轮与操作数据生成。</span></p>
+            <h3><span class="t-en">Simulation &amp; evaluation</span><span class="t-zh">仿真与评测</span></h3>
+            <p><span class="t-en">Isaac Sim / Lab and Newton, rendering fidelity, protocols, and a sim-real gap that is measured rather than assumed.</span><span class="t-zh">Isaac Sim / Lab 与 Newton、渲染保真、评测协议，以及被量测而不是被假设的虚实差距。</span></p>
           </article>
           <article class="interest">
-            <h3><span class="t-en">VLA post-training &amp; RL</span><span class="t-zh">VLA 后训练与强化学习</span></h3>
-            <p><span class="t-en">SFT / DAgger / RLT data contracts, PPO training, and evaluation-aware policy selection.</span><span class="t-zh">SFT / DAgger / RLT 数据契约、PPO 训练，以及以评测为导向的策略选择。</span></p>
+            <h3><span class="t-en">Learning, training &amp; deployment</span><span class="t-zh">学习、训练与部署</span></h3>
+            <p><span class="t-en">VLA post-training, PPO and imitation data, model serving, and on-robot evaluation.</span><span class="t-zh">VLA 后训练、PPO 与模仿数据、模型服务，以及真机评测。</span></p>
           </article>
         </div>
       </div>
@@ -246,7 +249,7 @@
   </footer>
 
   <script src="/assets/js/i18n.js"></script>
-  <script src="/assets/js/hero-scene.js"></script>
+  <script type="module" src="/assets/js/hero-three.js"></script>
   <script src="/assets/js/main.js"></script>
 </body>
 </html>
