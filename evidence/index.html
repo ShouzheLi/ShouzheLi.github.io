@@ -45,7 +45,7 @@
       <div class="wrap">
         <p class="eyebrow"><span class="t-en">Evidence</span><span class="t-zh">证据</span></p>
         <h1 class="display"><span class="t-en">Every claim carries a status, a date and a boundary.</span><span class="t-zh">每条声明都带状态、日期与边界。</span></h1>
-        <p class="lede"><span class="t-en">11 entries. Measured means a number with a condition; method means a procedure, not a result.</span><span class="t-zh">共 11 条。实测 = 有数字且有条件；方法 = 是流程，不是结果。</span></p>
+        <p class="lede"><span class="t-en">16 entries. Measured means a number with a condition; method means a procedure, not a result.</span><span class="t-zh">共 16 条。实测 = 有数字且有条件；方法 = 是流程，不是结果。</span></p>
         <div class="filters" role="group" aria-label="Filter by layer">
           <button class="filter is-active" type="button" data-filter="all">All</button>
           <button class="filter" type="button" data-filter="L01">L01 <span class="t-en">Perception & sensing</span><span class="t-zh">感知与传感</span></button>
@@ -251,8 +251,46 @@
             </details>
           </div>
         </article>
-        <article class="entry reveal" id="E-2026-09-15-01" data-tags="L07 build documented">
+        <article class="entry reveal" id="E-2026-09-20-02" data-tags="L04 build documented">
           <div class="entry-no">11</div>
+          <div class="entry-main">
+            <div class="entry-meta"><span class="badge badge--documented">DOCUMENTED</span><span>2026-09-20</span><span>L04 Understanding & mapping · build</span></div>
+            <h3 class="entry-title"><span class="t-en">4D reconstruction from a single camera</span><span class="t-zh">单目视频的 4D 重建与交互轨迹回放</span></h3>
+            <p class="entry-sum"><span class="t-en">Two scenes reconstructed to 223 and 221 frames, with drag-and-drop comparison between footage and replay.</span><span class="t-zh">两个场景分别重建 223 帧与 221 帧，并提供实物与回放的拖拽对照。</span></p>
+            <dl class="entry-fields">
+              <dt>Condition</dt><dd>Personal project, 2026-09; two scenes only.</dd>
+              <dt>Boundary</dt><dd>Trajectory replay, not learned dynamics; small sample; no quantitative pose error reported.</dd>
+              <dt>Source</dt><dd><code>project record and demo clips</code></dd>
+            </dl>
+            <details class="entry-detail">
+              <summary><span class="t-en">Method and result</span><span class="t-zh">做法与结果</span></summary>
+              <p><strong>Q</strong> Can pose, geometry and interaction be recovered from one moving camera?</p>
+              <p><strong>M</strong> Estimate camera poses and object traces, replay motion in Newton, clean editable assets in Blender.</p>
+              <p><strong>R</strong> Desktop 223 frames, cabinet 221 frames; two interactive instances.</p>
+            </details>
+          </div>
+        </article>
+        <article class="entry reveal" id="E-2026-09-20-01" data-tags="L04 build documented">
+          <div class="entry-no">12</div>
+          <div class="entry-main">
+            <div class="entry-meta"><span class="badge badge--documented">DOCUMENTED</span><span>2026-09-20</span><span>L04 Understanding & mapping · build</span></div>
+            <h3 class="entry-title"><span class="t-en">49 interactive USD assets rebuilt from video only</span><span class="t-zh">仅凭实拍视频重建 49 项可交互 USD 资产</span></h3>
+            <p class="entry-sum"><span class="t-en">Seven object categories plus four indoor environments, replayed in Newton with per-view comparison videos.</span><span class="t-zh">7 个物体类目加 4 处室内环境，在 Newton 中复现交互，并输出逐视角对照视频。</span></p>
+            <dl class="entry-fields">
+              <dt>Condition</dt><dd>Personal project, 2026-09; footage as the only source, no CAD.</dd>
+              <dt>Boundary</dt><dd>Self-reported; appearance is matched per view, not photometrically validated; no independent reproduction.</dd>
+              <dt>Source</dt><dd><code>project record and demo clips</code></dd>
+            </dl>
+            <details class="entry-detail">
+              <summary><span class="t-en">Method and result</span><span class="t-zh">做法与结果</span></summary>
+              <p><strong>Q</strong> Can an asset pipeline start from footage alone and still hold up in interaction?</p>
+              <p><strong>M</strong> Solve camera poses, reconstruct geometry and appearance, add collision proxies, replay in Newton, compare per view.</p>
+              <p><strong>R</strong> 49 interactive USD assets across 8 categories; four indoor environments; side-by-side appearance and interaction clips.</p>
+            </details>
+          </div>
+        </article>
+        <article class="entry reveal" id="E-2026-09-15-01" data-tags="L07 build documented">
+          <div class="entry-no">13</div>
           <div class="entry-main">
             <div class="entry-meta"><span class="badge badge--documented">DOCUMENTED</span><span>2026-09-15</span><span>L07 Simulation & evaluation · build</span></div>
             <h3 class="entry-title"><span class="t-en">Starting the engine without renderer injection froze the host</span><span class="t-zh">不注入渲染器就起引擎，整机卡死</span></h3>
@@ -267,6 +305,63 @@
               <p><strong>Q</strong> What happens when the render pipeline is left at the default?</p>
               <p><strong>M</strong> Launch the platform engine entry without the launcher patch; observe host state and logs.</p>
               <p><strong>R</strong> Host froze. With the patch injected the log shows renderer=RealTimePathTracing and the engine runs.</p>
+            </details>
+          </div>
+        </article>
+        <article class="entry reveal" id="E-2026-03-01-02" data-tags="L07 eval documented">
+          <div class="entry-no">14</div>
+          <div class="entry-main">
+            <div class="entry-meta"><span class="badge badge--documented">DOCUMENTED</span><span>2026-03-01</span><span>L07 Simulation & evaluation · eval</span></div>
+            <h3 class="entry-title"><span class="t-en">Gradient-free fitting for cloth simulation parameters</span><span class="t-zh">布料仿真参数的无梯度优化</span></h3>
+            <p class="entry-sum"><span class="t-en">A Real2Sim parameter search for fabric, reported at roughly 20 percent better sim-real alignment.</span><span class="t-zh">面向面料的 Real2Sim 参数搜索，报告虚实对齐精度提升约 20%。</span></p>
+            <dl class="entry-fields">
+              <dt>Condition</dt><dd>Industry project, 2026-03 onward; internal fabric set and metric.</dd>
+              <dt>Boundary</dt><dd>Self-reported; metric definition is internal; no independent reproduction or confidence interval.</dd>
+              <dt>Source</dt><dd><code>project record</code></dd>
+            </dl>
+            <details class="entry-detail">
+              <summary><span class="t-en">Method and result</span><span class="t-zh">做法与结果</span></summary>
+              <p><strong>Q</strong> How do you fit cloth physics when gradients are unavailable or unreliable?</p>
+              <p><strong>M</strong> Build the fabric simulation from zero, then search parameters with Optuna, CMA-ES and Ray Tune under a fixed evaluation.</p>
+              <p><strong>R</strong> Reported ~20 percent improvement in sim-real alignment.</p>
+            </details>
+          </div>
+        </article>
+        <article class="entry reveal" id="E-2026-03-01-01" data-tags="L06 build documented">
+          <div class="entry-no">15</div>
+          <div class="entry-main">
+            <div class="entry-meta"><span class="badge badge--documented">DOCUMENTED</span><span>2026-03-01</span><span>L06 Data & training · build</span></div>
+            <h3 class="entry-title"><span class="t-en">Soft-body manipulation data flywheel</span><span class="t-zh">柔性物体操作数据飞轮</span></h3>
+            <p class="entry-sum"><span class="t-en">Infrastructure spanning capture, reconstruction, generation, training and evaluation for soft-object manipulation.</span><span class="t-zh">覆盖采集、重建、生成、训练与评估的柔性物体操作基础设施。</span></p>
+            <dl class="entry-fields">
+              <dt>Condition</dt><dd>Industry project, 2026-03 onward.</dd>
+              <dt>Boundary</dt><dd>Internal platform; no public metrics; this entry describes architecture, not benchmark results.</dd>
+              <dt>Source</dt><dd><code>project record</code></dd>
+            </dl>
+            <details class="entry-detail">
+              <summary><span class="t-en">Method and result</span><span class="t-zh">做法与结果</span></summary>
+              <p><strong>Q</strong> What does it take to close the data loop for deformable objects?</p>
+              <p><strong>M</strong> Integrate capture, 3DGS reconstruction, simulation generation, training and evaluation into one pipeline on Isaac Sim and Newton.</p>
+              <p><strong>R</strong> End-to-end loop built; components run as one system.</p>
+            </details>
+          </div>
+        </article>
+        <article class="entry reveal" id="E-2025-05-01-01" data-tags="L06 build documented">
+          <div class="entry-no">16</div>
+          <div class="entry-main">
+            <div class="entry-meta"><span class="badge badge--documented">DOCUMENTED</span><span>2025-05-01</span><span>L06 Data & training · build</span></div>
+            <h3 class="entry-title"><span class="t-en">RL training and synthetic data for insulator grasping</span><span class="t-zh">绝缘子抓取的 RL 训练与合成数据</span></h3>
+            <p class="entry-sum"><span class="t-en">Simulation to policy to data: 93 percent grasp and 82 percent place, with more than 100 synthetic episodes.</span><span class="t-zh">仿真到策略再到数据：抓取 93%、放置 82%，合成数据 100 条以上。</span></p>
+            <dl class="entry-fields">
+              <dt>Condition</dt><dd>Industry project, 2025-05 to 2026-02; task-specific protocol.</dd>
+              <dt>Boundary</dt><dd>Self-reported success rates; no public protocol or held-out site; not a general manipulation claim.</dd>
+              <dt>Source</dt><dd><code>project record</code></dd>
+            </dl>
+            <details class="entry-detail">
+              <summary><span class="t-en">Method and result</span><span class="t-zh">做法与结果</span></summary>
+              <p><strong>Q</strong> Can a simulation platform produce both policies and usable synthetic data?</p>
+              <p><strong>M</strong> Train PPO policies in Isaac Lab, log rollouts, and export synthetic episodes through LeRobot.</p>
+              <p><strong>R</strong> Grasp 93 percent, place 82 percent, 100+ synthetic episodes.</p>
             </details>
           </div>
         </article>

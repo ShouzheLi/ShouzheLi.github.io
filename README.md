@@ -9,7 +9,9 @@ index.html               Home: hero, 3x3 capability grid, latest evidence, lates
 capabilities/index.html  Full 9-layer x 4-dimension matrix, ratings, gaps, upgrade rules
 evidence/index.html      Generated from content/evidence/*.md
 radar/index.html         Generated from content/radar/*.md
-projects/                Three case pages: problem, approach, evidence, boundary
+projects/                Seven case pages: problem, approach, result, boundary
+                         (sim-eval-stack, real2sim, 4d-gen, soft-body-engine,
+                          cloth-sysid, rl-platform, embodied-ai-expert)
 content/facts.json       Single source for every number shown on the site
 content/ratings.json     The 9x4 frame: level, evidence ids, review date, gap plan
 content/evidence/*.md    One file per evidence entry
@@ -97,4 +99,10 @@ The pre-redesign version is preserved on branch `backup/pre-redesign-2026-11-10`
 ## Pending
 
 - Real hero video (8s loop, <4MB). Until then the hero uses `assets/img/hero-poster.svg` with a labelled slot.
-- A real contact address; the current page points to GitHub only.
+- GitHub repositories for the project pages; all except SIM-EVAL are marked "GitHub pending".
+- Project media (stills or clips) for the five new case pages; they are text-only for now.
+
+## Notes
+
+- The resume section lives on the home page (`#resume`). The current employer is anonymised as "Humanoid robot research institute"; do not add the legal entity name without an explicit decision.
+- Personal phone number is intentionally not published.

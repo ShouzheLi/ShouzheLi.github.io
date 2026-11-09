@@ -47,8 +47,8 @@
       <div class="wrap">
         <p class="eyebrow"><span class="t-en">Projects</span><span class="t-zh">项目</span></p>
         <h1 class="display" style="max-width:18ch;">
-          <span class="t-en">Three systems, <em>one loop.</em></span>
-          <span class="t-zh">三个系统，<br><em>同一个闭环。</em></span>
+          <span class="t-en">Selected systems, <em>one loop.</em></span>
+          <span class="t-zh">这些系统，<br><em>同一个闭环。</em></span>
         </h1>
         <p class="lede" style="max-width:66ch;">
           <span class="t-en">Each page follows the same structure: problem, approach, evidence, boundary. Details are abstracted where the platform is private.</span>
@@ -65,17 +65,53 @@
             <div class="project-body">
               <span class="project-kicker"><span class="t-en">Flagship · simulation &amp; evaluation</span><span class="t-zh">旗舰 · 仿真与评测</span></span>
               <h2 class="project-title"><a href="/projects/sim-eval-stack/index.html">SIM-EVAL</a></h2>
-              <p class="project-desc"><span class="t-en">Making VLA simulation scores comparable: scenes, camera domain, protocol identity, and a silent-failure audit.</span><span class="t-zh">让 VLA 仿真分数可比：场景、相机域、协议身份与静默失效审计。</span></p>
+              <p class="project-desc"><span class="t-en">A reproducible evaluation stack for VLA models: scene onboarding, rendering fidelity, tiered protocols and a silent-failure audit.</span><span class="t-zh">面向 VLA 的可复现评测栈：场景接入、渲染保真、分层协议与静默失效审计。</span></p>
               <div class="tags"><span class="tag tag-accent">Simulation</span><span class="tag">Evaluation</span><span class="tag">Isaac Lab</span></div>
             </div>
           </article>
           <article class="project-card reveal">
-            <a class="project-media" href="/projects/real2sim/index.html"><img src="/assets/img/project-real2sim.svg" alt="Real2Sim pipeline" loading="lazy"></a>
+            <a class="project-media" href="/projects/real2sim/index.html"><img src="/assets/img/project-real2sim.svg" alt="Real2Sim reconstruction from video" loading="lazy"></a>
             <div class="project-body">
-              <span class="project-kicker"><span class="t-en">Method · real2sim</span><span class="t-zh">方法 · Real2Sim</span></span>
+              <span class="project-kicker"><span class="t-en">Personal · real2sim</span><span class="t-zh">个人 · Real2Sim</span></span>
               <h2 class="project-title"><a href="/projects/real2sim/index.html">Real2Sim</a></h2>
-              <p class="project-desc"><span class="t-en">Evidence layering before geometry: identity, interface, silhouette, contact. ICP is refinement, not recognition.</span><span class="t-zh">先分层证据再动几何：身份、接口、轮廓、接触。ICP 是精配准，不是识别。</span></p>
-              <div class="tags"><span class="tag tag-accent">Real2Sim</span><span class="tag">USD</span><span class="tag">ICP</span></div>
+              <p class="project-desc"><span class="t-en">49 interactive USD assets rebuilt from video only, replayed in Newton with per-view comparison.</span><span class="t-zh">仅凭实拍视频重建 49 项可交互 USD 资产，在 Newton 中回放并做逐视角对照。</span></p>
+              <div class="tags"><span class="tag tag-accent">Real2Sim</span><span class="tag">USD</span><span class="tag">Newton</span></div>
+            </div>
+          </article>
+          <article class="project-card reveal">
+            <a class="project-media" href="/projects/soft-body-engine/index.html"><img src="/assets/img/project-cloth.svg" alt="Soft-body manipulation data flywheel" loading="lazy"></a>
+            <div class="project-body">
+              <span class="project-kicker"><span class="t-en">Industry · soft-body</span><span class="t-zh">工业 · 柔性物体</span></span>
+              <h2 class="project-title"><a href="/projects/soft-body-engine/index.html">Soft-body engine</a></h2>
+              <p class="project-desc"><span class="t-en">Capture, reconstruct, generate, train and evaluate deformable manipulation in one loop.</span><span class="t-zh">把柔性物体操作的采集、重建、生成、训练与评估接成一条闭环。</span></p>
+              <div class="tags"><span class="tag tag-accent">Newton</span><span class="tag">3DGS</span><span class="tag">ROS2</span></div>
+            </div>
+          </article>
+          <article class="project-card reveal">
+            <a class="project-media" href="/projects/4d-gen/index.html"><img src="/assets/img/project-4d.svg" alt="4D reconstruction from one camera" loading="lazy"></a>
+            <div class="project-body">
+              <span class="project-kicker"><span class="t-en">Personal · 4D</span><span class="t-zh">个人 · 4D</span></span>
+              <h2 class="project-title"><a href="/projects/4d-gen/index.html">4D-GEN</a></h2>
+              <p class="project-desc"><span class="t-en">Camera pose, object geometry and interaction trajectories recovered from a single video.</span><span class="t-zh">从单目视频恢复相机位姿、物体几何与交互轨迹，并回放为可编辑场景。</span></p>
+              <div class="tags"><span class="tag tag-accent">4D</span><span class="tag">Blender</span><span class="tag">Pose</span></div>
+            </div>
+          </article>
+          <article class="project-card reveal">
+            <a class="project-media" href="/projects/cloth-sysid/index.html"><img src="/assets/img/project-cloth.svg" alt="Gradient-free cloth parameter fitting" loading="lazy"></a>
+            <div class="project-body">
+              <span class="project-kicker"><span class="t-en">Industry · Real2Sim</span><span class="t-zh">工业 · Real2Sim</span></span>
+              <h2 class="project-title"><a href="/projects/cloth-sysid/index.html">Cloth fitting</a></h2>
+              <p class="project-desc"><span class="t-en">A fixed evaluation harness plus Optuna, CMA-ES and Ray Tune for fabric parameters.</span><span class="t-zh">固定评测口径，用 Optuna、CMA-ES 与 Ray Tune 搜索面料仿真参数。</span></p>
+              <div class="tags"><span class="tag tag-accent">VBD</span><span class="tag">Optuna</span><span class="tag">CMA-ES</span></div>
+            </div>
+          </article>
+          <article class="project-card reveal">
+            <a class="project-media" href="/projects/rl-platform/index.html"><img src="/assets/img/project-sim-eval.svg" alt="RL training and synthetic data" loading="lazy"></a>
+            <div class="project-body">
+              <span class="project-kicker"><span class="t-en">Industry · RL platform</span><span class="t-zh">工业 · RL 平台</span></span>
+              <h2 class="project-title"><a href="/projects/rl-platform/index.html">RL platform</a></h2>
+              <p class="project-desc"><span class="t-en">Isaac Lab environments that produce both policies and synthetic episodes.</span><span class="t-zh">在 Isaac Lab 里同时产出策略与合成数据。</span></p>
+              <div class="tags"><span class="tag tag-accent">PPO</span><span class="tag">LeRobot</span><span class="tag">Isaac Lab</span></div>
             </div>
           </article>
           <article class="project-card reveal">
@@ -83,7 +119,7 @@
             <div class="project-body">
               <span class="project-kicker"><span class="t-en">System · skill + agent</span><span class="t-zh">系统 · skill + agent</span></span>
               <h2 class="project-title"><a href="/projects/embodied-ai-expert/index.html">Embodied AI Expert</a></h2>
-              <p class="project-desc"><span class="t-en">Two skills, one router, and a rule that every update must leave an evidence trail.</span><span class="t-zh">两个 skill、一个路由，以及"每次更新都留证据"的规则。</span></p>
+              <p class="project-desc"><span class="t-en">Two skills and one router: broad expertise, deep platform knowledge, explicit update rules.</span><span class="t-zh">两个 skill 加一个路由：广域知识、平台深度、明确的更新规则。</span></p>
               <div class="tags"><span class="tag tag-accent">Skill</span><span class="tag">Agent</span><span class="tag">Knowledge</span></div>
             </div>
           </article>

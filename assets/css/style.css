@@ -50,7 +50,7 @@
 
 * { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 84px; }
 
 html[data-lang="en"] .t-zh { display: none; }
 html[data-lang="zh"] .t-en { display: none; }
@@ -544,6 +544,41 @@ p { margin: 0; }
 .focus-card h3 { font-size: 18px; margin-top: 10px; }
 .focus-card p { margin-top: 8px; font-size: 14px; color: var(--muted); }
 
+/* ---------- resume ---------- */
+.resume-grid { display: grid; grid-template-columns: 1.35fr .65fr; gap: 56px; }
+.resume-h {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+  margin: 0 0 18px;
+}
+.timeline { list-style: none; padding: 0; margin: 0 0 40px; }
+.timeline li {
+  display: grid;
+  grid-template-columns: 132px 1fr;
+  gap: 20px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+}
+.timeline .when { font-family: var(--mono); font-size: 11px; color: var(--muted); padding-top: 3px; }
+.timeline h4 { font-size: 17px; letter-spacing: -.01em; }
+.timeline .org { font-size: 12px; color: var(--muted); margin: 3px 0 6px; }
+.timeline p { font-size: 14px; color: var(--ink-2); }
+.skill-group { margin-bottom: 20px; }
+.skill-label {
+  display: block;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .06em;
+  color: var(--faint);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
 /* ---------- detail pages ---------- */
 .list-hero { padding: 56px 0 24px; }
 .detail-hero { padding: 64px 0 32px; }
@@ -556,7 +591,7 @@ p { margin: 0; }
 .detail-section { padding: 44px 0; border-top: 1px solid var(--line); }
 .detail-section h2 { font-size: 26px; letter-spacing: -.01em; margin-bottom: 18px; }
 .detail-section h2 .sec-no { font-family: var(--mono); font-size: 11px; color: var(--faint); margin-right: 12px; }
-.narrow { max-width: 820px; margin: 0 auto; padding: 0 var(--pad); }
+.narrow { max-width: 860px; margin: 0; padding: 0 var(--pad); }
 .prose p + p { margin-top: 14px; }
 .prose p { color: var(--ink-2); }
 .zh-summary { border-left: 2px solid var(--accent); padding: 4px 0 4px 18px; margin: 24px 0 0; color: var(--ink-2); font-size: 15px; }
@@ -659,6 +694,8 @@ p { margin: 0; }
   .editorial .when { grid-column: 2; }
   .duo { grid-template-columns: 1fr; }
   .matrix { min-width: 640px; }
+  .resume-grid { grid-template-columns: 1fr; gap: 32px; }
+  .timeline li { grid-template-columns: 1fr; gap: 4px; }
   .detail-hero { padding: 40px 0 24px; }
   .detail-title { font-size: clamp(28px, 8vw, 40px); }
   .meta-row { gap: 16px; }

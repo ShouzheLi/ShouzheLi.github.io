@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="4D reconstruction: camera frustum and an object trajectory">
+  <rect width="800" height="600" fill="#f4f4f4"/>
+  <g stroke="#dedede" stroke-width="1">
+    <path d="M0 150H800M0 300H800M0 450H800M200 0V600M400 0V600M600 0V600"/>
+  </g>
+  <g fill="none" stroke="#c9c9c9" stroke-width="1.5">
+    <path d="M120 120 L250 90 L280 210 L150 240 Z"/>
+    <path d="M120 120 L150 240 M250 90 L280 210"/>
+  </g>
+  <circle cx="200" cy="165" r="4" fill="#1e3569"/>
+  <path d="M200 165 C 330 120, 420 330, 560 300 S 700 210, 720 260" fill="none" stroke="#1e3569" stroke-width="2" stroke-dasharray="6 6" opacity="0.55"/>
+  <g fill="none" stroke="#bdbdbd" stroke-width="1.5">
+    <rect x="330" y="210" width="90" height="70" rx="3"/>
+    <rect x="470" y="290" width="90" height="70" rx="3"/>
+    <rect x="620" y="240" width="90" height="70" rx="3"/>
+  </g>
+  <g fill="#1e3569">
+    <circle cx="330" cy="245" r="4"/>
+    <circle cx="560" cy="300" r="4"/>
+    <circle cx="710" cy="270" r="4"/>
+  </g>
+  <text x="40" y="560" font-family="ui-monospace, monospace" font-size="12" letter-spacing="1.5" fill="#9a9a9a">MONOCULAR 4D RECONSTRUCTION</text>
+</svg>

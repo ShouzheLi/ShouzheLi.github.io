@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Cloth simulation: a wavy mesh with parameter sweeps">
+  <rect width="800" height="600" fill="#f4f4f4"/>
+  <g stroke="#dedede" stroke-width="1">
+    <path d="M0 150H800M0 300H800M0 450H800M200 0V600M400 0V600M600 0V600"/>
+  </g>
+  <g fill="none" stroke="#c4c4c4" stroke-width="1">
+    <path d="M120 420 C 220 300, 300 360, 400 250 S 600 200, 690 300"/>
+    <path d="M120 450 C 220 330, 300 390, 400 280 S 600 230, 690 330"/>
+    <path d="M120 480 C 220 360, 300 420, 400 310 S 600 260, 690 360"/>
+    <path d="M150 390 C 240 280, 320 330, 420 220 S 610 180, 700 280"/>
+    <path d="M90 450 C 190 330, 290 390, 390 280 S 590 230, 680 330"/>
+  </g>
+  <g stroke="#1e3569" stroke-width="1.2" opacity="0.55">
+    <path d="M180 430 C 260 340, 330 380, 420 285 S 590 240, 660 315"/>
+    <path d="M210 455 C 290 365, 360 405, 450 310 S 620 265, 690 340"/>
+  </g>
+  <g fill="none" stroke="#b9b9b9" stroke-width="1">
+    <path d="M120 420 C 220 300, 300 360, 400 250 S 600 200, 690 300 L 690 360 C 600 260, 400 310, 300 420 S 220 360, 120 480 Z" fill="#ececec" opacity="0.6"/>
+  </g>
+  <text x="40" y="560" font-family="ui-monospace, monospace" font-size="12" letter-spacing="1.5" fill="#9a9a9a">CLOTH PARAMETER FITTING</text>
+</svg>

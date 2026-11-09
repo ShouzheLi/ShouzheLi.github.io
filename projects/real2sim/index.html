@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Real2Sim · Shouzhe Li</title>
-  <meta name="description" content="A Real2Sim method note: layer the evidence before touching geometry. Identity, interface, silhouette, contact.">
+  <title>Real2Sim reconstruction · Shouzhe Li</title>
+  <meta name="description" content="49 interactive USD assets rebuilt from video only, replayed in Newton.">
   <meta name="color-scheme" content="light dark">
   <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
   <link rel="stylesheet" href="/assets/css/style.css">
@@ -43,57 +43,42 @@
 
   <main id="main">
     <header class="detail-hero wrap">
-      <p class="detail-kicker">Method note · 2026</p>
-      <h1 class="detail-title">Evidence before <em>geometry.</em></h1>
-      <p class="detail-lede">A Real2Sim procedure for turning a short capture into an asset that is aligned, physically plausible and comparable — without pretending a mesh is a measurement.</p>
+      <p class="detail-kicker">Personal project · 2026.09</p>
+      <h1 class="detail-title">49 interactive assets, <em>from video only.</em></h1>
+      <p class="detail-lede">A Real2Sim pass that treats footage as the only source of truth: appearance, geometry and interaction, rebuilt as USD and replayed in Newton.</p>
       <ul class="meta-row">
         <li><strong>Role</strong>Real2Sim &amp; asset pipeline</li>
-        <li><strong>Stack</strong>USD · ICP · reconstruction</li>
-        <li><strong>Status</strong>Method note · no accepted asset yet</li>
+        <li><strong>Stack</strong>USD / USDZ · Newton · MuJoCo · Blender · FFmpeg</li>
+        <li><strong>Status</strong>Personal project · GitHub pending</li>
       </ul>
-      <div class="zh-summary">
-        <strong>中文摘要</strong>
-        这是一份方法说明，不是已验收的资产。原则是先把证据分层——身份、接口、轮廓、接触——再动几何；ICP 只在粗对齐后做局部精配准，不能替代识别与尺度恢复。
-      </div>
+      <div class="zh-summary"><strong>中文摘要</strong>以实拍视频为唯一依据，重建 49 项可交互 USD 资产（7 个物体类目 + 4 处室内环境），在 Newton 中复现真实交互；输出逐视角外观对照与上下并置的交互对比视频。</div>
     </header>
 
     <section class="detail-section">
       <div class="narrow prose">
         <h2><span class="sec-no">01</span>Problem</h2>
-        <p>The bottleneck is not generating a pretty mesh. It is producing an asset whose identity, interfaces and contact behaviour can be defended. A model that looks right from one angle can still fail the first contact.</p>
-        <p>CAD and footage disagree more often than expected: CAD proves design data, not the revision on the bench; video constrains silhouette, not hidden structure.</p>
+        <p>There is no CAD and no scan: a short capture is all you get. The asset still has to be aligned, physically plausible and visually comparable at every viewpoint.</p>
       </div>
     </section>
 
     <section class="detail-section">
       <div class="narrow">
         <h2><span class="sec-no">02</span>Approach</h2>
-        <div class="focus-grid" style="margin-top:8px;">
-          <article class="focus-card"><div class="focus-no">01 / IDENTITY</div><h3>Confirm the part.</h3><p>Model, revision and assembly are checked before any dimension is trusted. A CAD file is evidence of design intent, not of the object on the table.</p></article>
-          <article class="focus-card"><div class="focus-no">02 / INTERFACE</div><h3>Measure what mates.</h3><p>Mounts, openings and clearances come from measured geometry; the observable silhouette comes from multi-view footage.</p></article>
-          <article class="focus-card"><div class="focus-no">03 / CONTACT</div><h3>Then proxy and test.</h3><p>Collision proxies are built to measured size, with contact offsets checked. ICP only refines a coarse pose; it does not recognize objects or recover scale.</p></article>
-        </div>
+        <div class="focus-grid" style="margin-top:8px;"><article class="focus-card"><div class="focus-no">01 / SOLVE</div><h3>Fix the views.</h3><p>Camera poses and scale first; geometry before materials. A wrong pose makes every later check meaningless.</p></article><article class="focus-card"><div class="focus-no">02 / BUILD</div><h3>Build for contact.</h3><p>Collision proxies, mass and contact offsets, not just a render mesh. The asset has to survive the first touch.</p></article><article class="focus-card"><div class="focus-no">03 / REPLAY</div><h3>Replay in Newton.</h3><p>Run the same interaction in simulation and compare per view, then cut the paired clips.</p></article></div>
       </div>
     </section>
 
     <section class="detail-section">
       <div class="narrow">
-        <h2><span class="sec-no">03</span>Evidence</h2>
-        <ul class="editorial">
-          <li><span class="no">01</span><a href="/evidence/index.html#E-2026-10-23-01">Real2Sim evidence layering before touching geometry</a><span class="when">2026-10-23</span></li>
-        </ul>
-        <p class="caption">Status: method. It records a decision procedure and its failure modes, not a validated asset.</p>
+        <h2><span class="sec-no">03</span>Result</h2>
+        <div class="focus-grid" style="margin-top:8px;"><article class="focus-card"><div class="focus-no">49</div><h3>Interactive assets</h3><p>USD assets with collision and material, usable in Newton.</p></article><article class="focus-card"><div class="focus-no">8</div><h3>Categories</h3><p>Seven object categories plus four indoor environments.</p></article><article class="focus-card"><div class="focus-no">2</div><h3>Comparison modes</h3><p>Per-view appearance stills and stacked interaction clips.</p></article></div>
       </div>
     </section>
 
     <section class="detail-section">
       <div class="narrow">
         <h2><span class="sec-no">04</span>Boundary</h2>
-        <ul class="editorial">
-          <li><span class="no">—</span><span>No asset has been accepted through this procedure yet; there is no physical validation entry.</span></li>
-          <li><span class="no">—</span><span>Reflective, repeated and occluded parts remain hard; ICP residuals alone are not acceptance.</span></li>
-          <li><span class="no">—</span><span>This page deliberately carries no asset counts or frame numbers.</span></li>
-        </ul>
+        <ul class="editorial"><li><span class="no">—</span><span>Self-reported project record; no independent reproduction.</span></li><li><span class="no">—</span><span>Appearance is matched per view, not photometrically validated.</span></li><li><span class="no">—</span><span>No physical contact measurement on the real objects yet.</span></li><li><span class="no">—</span><span>GitHub repository is pending; no code link is claimed.</span></li></ul>
       </div>
     </section>
   </main>
