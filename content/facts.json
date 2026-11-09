@@ -1,0 +1,71 @@
+{
+  "_readme": "Single source of truth for numbers shown on the site. Every entry needs date, condition, source and expires. The build/check scripts compare pages against this file.",
+  "facts": {
+    "render_sensitivity": {
+      "label_en": "Render sensitivity",
+      "label_zh": "渲染口径敏感性",
+      "value": "30 → 85",
+      "unit": "%",
+      "date": "2026-10-16",
+      "condition": "Same model, same scene, same checkpoint; only renderer mode and camera domain changed.",
+      "condition_zh": "同一模型、同一场景、同一 ckpt，仅改渲染器与相机域。",
+      "source": "skill references/03-camera-rendering.md; SKILL.md rule #1",
+      "expires": "2027-01-31"
+    },
+    "scenes": {
+      "label_en": "Scenes",
+      "label_zh": "场景",
+      "value": "33",
+      "unit": "",
+      "date": "2026-10-16",
+      "condition": "Platform snapshot; live counts drift.",
+      "condition_zh": "平台快照，实时数量会变。",
+      "source": "skill SKILL.md status block",
+      "expires": "2026-12-31"
+    },
+    "contract_tests": {
+      "label_en": "Contract tests",
+      "label_zh": "契约测试",
+      "value": "200",
+      "unit": "",
+      "date": "2026-10-16",
+      "condition": "Platform snapshot; live counts drift.",
+      "condition_zh": "平台快照，实时数量会变。",
+      "source": "skill SKILL.md status block",
+      "expires": "2026-12-31"
+    },
+    "model_profiles": {
+      "label_en": "Model profiles",
+      "label_zh": "基模档案",
+      "value": "11",
+      "unit": "",
+      "date": "2026-10-14",
+      "condition": "Platform snapshot.",
+      "condition_zh": "平台快照。",
+      "source": "skill SKILL.md status block",
+      "expires": "2026-12-31"
+    },
+    "gripper_dof": {
+      "label_en": "Gripper driven DOF",
+      "label_zh": "夹爪驱动自由度",
+      "value": "34",
+      "unit": "",
+      "date": "2026-09-21",
+      "condition": "G2 omnipicker USD after gripper assembly; 42 rigid bodies.",
+      "condition_zh": "G2 omnipicker 夹爪装配后 USD；42 刚体。",
+      "source": "skill references/04-physics-grasping.md C1",
+      "expires": "2027-06-30"
+    },
+    "clik_gain": {
+      "label_en": "CLIK damping",
+      "label_zh": "CLIK 阻尼",
+      "value": "0.002",
+      "unit": "",
+      "date": "2026-10-15",
+      "condition": "4-joint probe converged to 4.0 mm in 12 steps; 0.01 stalled at ~14 mm.",
+      "condition_zh": "4 关节探针 12 步收敛到 4.0 mm；0.01 时停在约 14 mm。",
+      "source": "skill references/04-physics-grasping.md §DLS",
+      "expires": "2027-06-30"
+    }
+  }
+}

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" data-lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Radar · Shouzhe Li</title>
+  <meta name="description" content="Weekly signals with judgment, confidence and an action.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
+</head>
+<body data-page="radar">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/index.html">
+      <span class="brand-mark">PA</span>
+      <span class="brand-text">Shouzhe Li<small><span class="t-en">EMBODIED AI · FULL STACK</span><span class="t-zh">具身智能 · 全栈</span></small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="/index.html"><span class="t-en">Home</span><span class="t-zh">首页</span></a>
+      <a href="/capabilities/index.html"><span class="t-en">Capabilities</span><span class="t-zh">能力</span></a>
+      <a href="/projects/index.html"><span class="t-en">Projects</span><span class="t-zh">项目</span></a>
+      <a href="/evidence/index.html"><span class="t-en">Evidence</span><span class="t-zh">证据</span></a>
+      <a href="/radar/index.html" aria-current="page"><span class="t-en">Radar</span><span class="t-zh">雷达</span></a>
+    </nav>
+    <div class="header-actions">
+      <div class="lang-toggle" role="group" aria-label="Switch language">
+        <button type="button" data-lang-option="en" aria-pressed="true" lang="en">EN</button>
+        <button type="button" data-lang-option="zh" aria-pressed="false" lang="zh-CN">中文</button>
+      </div>
+      <button class="icon-btn theme-toggle" type="button" aria-label="Toggle color theme">
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg>
+      </button>
+      <button class="icon-btn menu-btn" type="button" aria-label="Menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+  <main id="main">
+    <section class="list-hero">
+      <div class="wrap">
+        <p class="eyebrow"><span class="t-en">Radar</span><span class="t-zh">雷达</span></p>
+        <h1 class="display"><span class="t-en">What changed, what I think, and what I will do about it.</span><span class="t-zh">发生了什么、我怎么判断、准备怎么做。</span></h1>
+        <p class="lede"><span class="t-en">12 signals · last update 2026-11-06. Only new tools, material updates and changed judgments.</span><span class="t-zh">12 条信号 · 最后更新 2026-11-06。只记新工具、实质更新与判断变化。</span></p>
+        <div class="filters" role="group" aria-label="Filter by layer">
+          <button class="filter is-active" type="button" data-filter="all">All</button>
+          <button class="filter" type="button" data-filter="L01">L01 <span class="t-en">Perception & sensing</span><span class="t-zh">感知与传感</span></button>
+          <button class="filter" type="button" data-filter="L02">L02 <span class="t-en">Body & actuation</span><span class="t-zh">本体与执行</span></button>
+          <button class="filter" type="button" data-filter="L03">L03 <span class="t-en">Motion control & manipulation</span><span class="t-zh">运动控制与操作</span></button>
+          <button class="filter" type="button" data-filter="L04">L04 <span class="t-en">Understanding & mapping</span><span class="t-zh">理解与建图</span></button>
+          <button class="filter" type="button" data-filter="L05">L05 <span class="t-en">Cognition & decision</span><span class="t-zh">认知与决策</span></button>
+          <button class="filter" type="button" data-filter="L06">L06 <span class="t-en">Data & training</span><span class="t-zh">数据与训练</span></button>
+          <button class="filter" type="button" data-filter="L07">L07 <span class="t-en">Simulation & evaluation</span><span class="t-zh">仿真与评测</span></button>
+          <button class="filter" type="button" data-filter="L08">L08 <span class="t-en">Deployment & operations</span><span class="t-zh">部署与运维</span></button>
+          <button class="filter" type="button" data-filter="L09">L09 <span class="t-en">Product & business</span><span class="t-zh">产品与商业</span></button>
+        </div>
+      </div>
+    </section>
+    <section class="section section-flush"><div class="wrap"><div class="entry-list">
+        <article class="entry reveal" id="R-2026-11-06-03" data-tags="L05 medium">
+          <div class="entry-no">01</div>
+          <div class="entry-main">
+            <div class="entry-meta"><span class="badge badge--conf">medium</span><span>2026-11-06</span><span>L05 Cognition & decision</span></div>
+            <h3 class="entry-title"><span class="t-en">HALO and VABAR preprints</span><span class="t-zh">HALO 与 VABAR 预印本</span></h3>
+            <p class="entry-sum"><strong class="k">Fact</strong> Both submitted 2026-11-04 (arXiv 2611.06908, 2611.06881).</p>
+            <p class="entry-sum"><strong class="k">Judgment</strong> Claims are author-reported; no independent reproduction yet.</p>
+            <p class="entry-action"><strong class="k">Action</strong> Add to the reading list; do not cite as capability.</p>
+          </div>
+        </article>
+        <article class="entry reveal" id="R-2026-11-06-02" data-tags="L03 high">
+          <div class="entry-no">02</div>
+          <div class="entry-main">
+            <div class="entry-meta"><span class="badge badge--conf">high</span><span>2026-11-06</span><span>L03 Motion control & manipulation</span></div>
+            <h3 class="entry-title"><span class="t-en">cuRobo 0.9.0 released</span><span class="t-zh">cuRobo 0.9.0 发布</span></h3>
+            <p class="entry-sum"><strong class="k">Fact</strong> Released 2026-11-05T02:35:49Z.</p>
+            <p class="entry-sum"><strong class="k">Judgment</strong> Motion-planning stacks are maturing; a candidate to replace hand-rolled IK on some paths.</p>
+            <p class="entry-action"><strong class="k">Action</strong> Prototype one pick-place path and compare cycle time and failure modes.</p>
+          </div>
+        </article>
+        <article class="entry reveal" id="R-2026-11-06-01" data-tags="L06 high">
+          <div class="entry-no">03</div>
+          <div class="entry-main">
+            <div class="entry-meta"><span class="badge badge--conf">high</span><span>2026-11-06</span><span>L06 Data & training</span></div>
+            <h3 class="entry-title"><span class="t-en">LeRobot 0.7.0 released</span><span class="t-zh">LeRobot 0.7.0 发布</span></h3>
+            <p class="entry-sum"><strong class="k">Fact</strong> Released 2026-11-05T17:13:20Z.</p>
+            <p class="entry-sum"><strong class="k">Judgment</strong> Training and data interfaces keep converging; watch whether dataset and action schemas standardize.</p>
+            <p class="entry-action"><strong class="k">Action</strong> Read the release notes; no rating change until a migration test exists.</p>
+          </div>
+        </article>
+        <article class="entry reveal" id="R-2026-11-03-01" data-tags="L07 medium">
+          <div class="entry-no">04</div>
+          <div class="entry-main">
+            <div class="entry-meta"><span class="badge badge--conf">medium</span><span>2026-11-03</span><span>L07 Simulation & evaluation</span></div>
+            <h3 class="entry-title"><span class="t-en">RoboLab v4 evaluation design</span><span class="t-zh">RoboLab v4 评测设计</span></h3>
+            <p class="entry-sum"><strong class="k">Fact</strong> Reviewed 2026-11-03: scene/task/environment decoupling and partial-progress events.</p>
+            <p class="entry-sum"><strong class="k">Judgment</strong> Evaluation design is moving toward process events, not just final success.</p>
+            <p class="entry-action"><strong class="k">Action</strong> Map its event schema against our protocol and propose one new metric.</p>
+          </div>
+        </article>
+        <article class="entry reveal" id="R-2026-10-29-01" data-tags="L08 medium">
+          <div class="entry-no">05</div>
+          <div class="entry-main">
+            <div class="entry-meta"><span class="badge badge--conf">medium</span><span>2026-10-29</span><span>L08 Deployment & operations</span></div>
+            <h3 class="entry-title"><span class="t-en">Rerun 0.41</span><span class="t-zh">Rerun 0.41</span></h3>
+            <p class="entry-sum"><strong class="k">Fact</strong> Version evidence recorded 2026-10-29.</p>
+            <p class="entry-sum"><strong class="k">Judgment</strong> Good enough for robot logs, but the ROS mapping and filtering contract needs review.</p>
+            <p class="entry-action"><strong class="k">Action</strong> Run a ten-minute playback trial with one episode.</p>
+          </div>
+        </article>
+        <article class="entry reveal" id="R-2026-10-28-01" data-tags="L07 low">
+          <div class="entry-no">06</div>
+          <div class="entry-main">
+            <div class="entry-meta"><span class="badge badge--conf">low</span><span>2026-10-28</span><span>L07 Simulation & evaluation</span></div>
+            <h3 class="entry-title"><span class="t-en">16-module tool baseline</span><span class="t-zh">16 模块工具基线</span></h3>
+            <p class="entry-sum"><strong class="k">Fact</strong> User-provided selection baseline archived 2026-10-28; not independently reviewed.</p>
+            <p class="entry-sum"><strong class="k">Judgment</strong> A starting point for comparison, not a ranking.</p>
+            <p class="entry-action"><strong class="k">Action</strong> Review three modules with real trials before any recommendation.</p>
+          </div>
+        </article>
+        <article class="entry reveal" id="R-2026-10-27-01" data-tags="L04 low">
+          <div class="entry-no">07</div>
+          <div class="entry-main">
+            <div class="entry-meta"><span class="badge badge--conf">low</span><span>2026-10-27</span><span>L04 Understanding & mapping</span></div>
+            <h3 class="entry-title"><span class="t-en">real2sim2real frontier claims</span><span class="t-zh">real2sim2real 前沿宣称</span></h3>
+            <p class="entry-sum"><strong class="k">Fact</strong> Frontier papers and vendor claims collected 2026-10-27; none reproduced.</p>
+            <p class="entry-sum"><strong class="k">Judgment</strong> Pipeline ideas are useful; performance claims are not evidence.</p>
+            <p class="entry-action"><strong class="k">Action</strong> Keep as reading; test one reconstruction step in isolation.</p>
+          </div>
+        </article>
+        <article class="entry reveal" id="R-2026-10-26-01" data-tags="L06 high">
+          <div class="entry-no">08</div>
+          <div class="entry-main">
+            <div class="entry-meta"><span class="badge badge--conf">high</span><span>2026-10-26</span><span>L06 Data & training</span></div>
+            <h3 class="entry-title"><span class="t-en">RLinf post-training delta audited</span><span class="t-zh">RLinf 后训练差异审计</span></h3>
+            <p class="entry-sum"><strong class="k">Fact</strong> File-level diff against upstream e42803e1: 1925 identical, 225 added, 61 modified.</p>
+            <p class="entry-sum"><strong class="k">Judgment</strong> Our stack is a fork with real data and control changes, not a reimplementation of RLT.</p>
+            <p class="entry-action"><strong class="k">Action</strong> Turn the diff into a maintenance checklist for upstream upgrades.</p>
+          </div>
+        </article>
+        <article class="entry reveal" id="R-2026-10-19-01" data-tags="L03 high">
+          <div class="entry-no">09</div>
+          <div class="entry-main">
+            <div class="entry-meta"><span class="badge badge--conf">high</span><span>2026-10-19</span><span>L03 Motion control & manipulation</span></div>
+            <h3 class="entry-title"><span class="t-en">Teleop XR subsystem split</span><span class="t-zh">遥操 XR 子系统分工</span></h3>
+            <p class="entry-sum"><strong class="k">Fact</strong> Decision 2026-10-19: L1 sidecar on the dev machine, engine and backend on the eval machine.</p>
+            <p class="entry-sum"><strong class="k">Judgment</strong> Teleop is now an interface problem, not a demo problem.</p>
+            <p class="entry-action"><strong class="k">Action</strong> Add one teleop evidence entry after the next end-to-end session.</p>
+          </div>
+        </article>
+        <article class="entry reveal" id="R-2026-10-16-01" data-tags="L08 high">
+          <div class="entry-no">10</div>
+          <div class="entry-main">
+            <div class="entry-meta"><span class="badge badge--conf">high</span><span>2026-10-16</span><span>L08 Deployment & operations</span></div>
+            <h3 class="entry-title"><span class="t-en">Dev-to-eval backend needs a tunnel</span><span class="t-zh">开发机到评测机必须走隧道</span></h3>
+            <p class="entry-sum"><strong class="k">Fact</strong> Direct access from the dual-NIC dev host failed 0/10; via SSH tunnel 10/10.</p>
+            <p class="entry-sum"><strong class="k">Judgment</strong> Network identity issues masquerade as service outages.</p>
+            <p class="entry-action"><strong class="k">Action</strong> Keep the tunnel as default and put the check in the runbook.</p>
+          </div>
+        </article>
+        <article class="entry reveal" id="R-2026-10-15-01" data-tags="L08 high">
+          <div class="entry-no">11</div>
+          <div class="entry-main">
+            <div class="entry-meta"><span class="badge badge--conf">high</span><span>2026-10-15</span><span>L08 Deployment & operations</span></div>
+            <h3 class="entry-title"><span class="t-en">Absolute-domain checkpoint doubled the pose</span><span class="t-zh">绝对域 ckpt 把姿态翻倍</span></h3>
+            <p class="entry-sum"><strong class="k">Fact</strong> Out-of-range joint values came from an absolute-domain checkpoint served by a client that added the current state.</p>
+            <p class="entry-sum"><strong class="k">Judgment</strong> Profile metadata must carry the output domain, or the harness silently doubles the pose.</p>
+            <p class="entry-action"><strong class="k">Action</strong> Add an output-domain field to every profile and validate on load.</p>
+          </div>
+        </article>
+        <article class="entry reveal" id="R-2026-10-14-01" data-tags="L07 high">
+          <div class="entry-no">12</div>
+          <div class="entry-main">
+            <div class="entry-meta"><span class="badge badge--conf">high</span><span>2026-10-14</span><span>L07 Simulation & evaluation</span></div>
+            <h3 class="entry-title"><span class="t-en">Version baseline frozen</span><span class="t-zh">版本基线冻结</span></h3>
+            <p class="entry-sum"><strong class="k">Fact</strong> Isaac Sim 6.0.1, Isaac Lab 6a7acb03, Arena 0.3.0; kit md5 pinned.</p>
+            <p class="entry-sum"><strong class="k">Judgment</strong> Version drift is a measurement risk, not an upgrade convenience.</p>
+            <p class="entry-action"><strong class="k">Action</strong> Re-run the fingerprint check before the next scoring round.</p>
+          </div>
+        </article>
+    </div></div></section>
+  </main>
+  <footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <span class="brand-mark" aria-hidden="true">PA</span>
+      <span>&copy; <span data-year>2026</span> Shouzhe Li. <span class="t-en">Built with static HTML/CSS/JS.</span><span class="t-zh">纯静态 HTML/CSS/JS 构建。</span></span>
+    </div>
+    <div class="footer-links">
+      <a href="/capabilities/index.html"><span class="t-en">Capabilities</span><span class="t-zh">能力</span></a>
+      <a href="/projects/index.html"><span class="t-en">Projects</span><span class="t-zh">项目</span></a>
+      <a href="/evidence/index.html"><span class="t-en">Evidence</span><span class="t-zh">证据</span></a>
+      <a href="/radar/index.html"><span class="t-en">Radar</span><span class="t-zh">雷达</span></a>
+      <a href="https://github.com/ShouzheLi" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</footer>
+  <script src="/assets/js/i18n.js"></script>
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>

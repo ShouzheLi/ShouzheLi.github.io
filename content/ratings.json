@@ -1,0 +1,112 @@
+{
+  "_readme": "Fixed 9x4 frame. level 0-3 is a self-assessment; evidence_ids link to content/evidence. gap_plan is required for every cell rated 0 or 1.",
+  "dimensions": [
+    { "id": "design", "name_en": "Design", "name_zh": "设计", "desc_en": "Scope, architecture, trade-offs", "desc_zh": "选型、架构、取舍" },
+    { "id": "build", "name_en": "Build", "name_zh": "实现", "desc_en": "Stand it up, debug it, explain failures", "desc_zh": "搭起来、调通、定位失败" },
+    { "id": "eval", "name_en": "Evaluate", "name_zh": "评测", "desc_en": "Define metrics, run controls, judge trust", "desc_zh": "定义指标、做对照、判断可信" },
+    { "id": "deploy", "name_en": "Deploy", "name_zh": "落地", "desc_en": "Ship, operate, own the outcome", "desc_zh": "部署、运维、对结果负责" }
+  ],
+  "levels": [
+    { "level": 0, "name_en": "Not covered", "name_zh": "未覆盖" },
+    { "level": 1, "name_en": "Can judge", "name_zh": "能判断" },
+    { "level": 2, "name_en": "Own the interface", "name_zh": "能 own 接口与取舍" },
+    { "level": 3, "name_en": "Deliver end to end", "name_zh": "能独立交付并解释失败" }
+  ],
+  "groups": [
+    { "id": "body", "name_en": "Body & real-time", "name_zh": "身体与实时" },
+    { "id": "brain", "name_en": "Brain & learning", "name_zh": "大脑与学习" },
+    { "id": "engineering", "name_en": "Engineering & business", "name_zh": "工程与商业" }
+  ],
+  "layers": [
+    {
+      "id": "L01", "group": "body",
+      "name_en": "Perception & sensing", "name_zh": "感知与传感",
+      "one_en": "Cameras, LiDAR, IMU, tactile, calibration, time sync",
+      "one_zh": "相机/激光/IMU/触觉、标定、时间同步",
+      "dims": { "design": 2, "build": 1, "eval": 2, "deploy": 1 },
+      "evidence_ids": ["E-2026-10-16-03"],
+      "review_date": "2026-11-10",
+      "gap_plan": "Build: bring up one new sensor end to end (driver, sync, calibration). Deploy: run a calibrated capture on a real cell."
+    },
+    {
+      "id": "L02", "group": "body",
+      "name_en": "Body & actuation", "name_zh": "本体与执行",
+      "one_en": "Mechanism, joints, drives, hands, end effectors",
+      "one_zh": "机构、关节、驱动、灵巧手、末端",
+      "dims": { "design": 1, "build": 1, "eval": 2, "deploy": 0 },
+      "evidence_ids": ["E-2026-09-21-01"],
+      "review_date": "2026-11-10",
+      "gap_plan": "Design: own a joint module selection with torque/speed budget. Build: assemble a hand on a real arm. Deploy: measure backlash and repeatability on hardware."
+    },
+    {
+      "id": "L03", "group": "body",
+      "name_en": "Motion control & manipulation", "name_zh": "运动控制与操作",
+      "one_en": "Kinematics, IK/MPC, grasping, teleoperation",
+      "one_zh": "运动学、IK/MPC、抓取、遥操",
+      "dims": { "design": 2, "build": 2, "eval": 2, "deploy": 1 },
+      "evidence_ids": ["E-2026-10-15-01"],
+      "review_date": "2026-11-10",
+      "gap_plan": "Deploy: run the servo stack on a physical arm with contact perturbations; compare against sim."
+    },
+    {
+      "id": "L04", "group": "brain",
+      "name_en": "Understanding & mapping", "name_zh": "理解与建图",
+      "one_en": "Detection, segmentation, SLAM, 3D reconstruction, state estimation",
+      "one_zh": "检测分割、SLAM、3D 重建、状态估计",
+      "dims": { "design": 1, "build": 1, "eval": 2, "deploy": 0 },
+      "evidence_ids": ["E-2026-10-23-01"],
+      "review_date": "2026-11-10",
+      "gap_plan": "Build: complete one video → SLAM → USD pipeline with residual report. Deploy: use the map for a real manipulation trial."
+    },
+    {
+      "id": "L05", "group": "brain",
+      "name_en": "Cognition & decision", "name_zh": "认知与决策",
+      "one_en": "World models, VLA, task planning, RSI",
+      "one_zh": "世界模型、VLA、任务规划、RSI",
+      "dims": { "design": 2, "build": 1, "eval": 2, "deploy": 0 },
+      "evidence_ids": ["E-2026-10-16-06"],
+      "review_date": "2026-11-10",
+      "gap_plan": "Build: reproduce one VLA inference/post-training loop end to end. Deploy: put a policy on hardware under a controlled protocol."
+    },
+    {
+      "id": "L06", "group": "brain",
+      "name_en": "Data & training", "name_zh": "数据与训练",
+      "one_en": "Collection, annotation, synthetic data, SFT/RL/post-training",
+      "one_zh": "采集、标注、合成数据、SFT/RL/后训练",
+      "dims": { "design": 2, "build": 1, "eval": 2, "deploy": 1 },
+      "evidence_ids": ["E-2026-10-26-01"],
+      "review_date": "2026-11-10",
+      "gap_plan": "Build: run a full post-training job with an ablation and a data-contract check."
+    },
+    {
+      "id": "L07", "group": "engineering",
+      "name_en": "Simulation & evaluation", "name_zh": "仿真与评测",
+      "one_en": "Scenes, rendering fidelity, physics, protocols, benchmarks",
+      "one_zh": "场景、渲染保真、物理、协议、基准",
+      "dims": { "design": 3, "build": 3, "eval": 3, "deploy": 2 },
+      "evidence_ids": ["E-2026-10-16-01", "E-2026-10-16-02", "E-2026-09-15-01"],
+      "review_date": "2026-11-10",
+      "gap_plan": "Deploy: run the evaluation stack as a service for an external team, not just internally."
+    },
+    {
+      "id": "L08", "group": "engineering",
+      "name_en": "Deployment & operations", "name_zh": "部署与运维",
+      "one_en": "Serving, real-time, safety, field ops, clusters",
+      "one_zh": "推理服务、实时性、安全、现场、集群",
+      "dims": { "design": 2, "build": 2, "eval": 1, "deploy": 1 },
+      "evidence_ids": ["E-2026-10-16-04", "E-2026-10-16-05"],
+      "review_date": "2026-11-10",
+      "gap_plan": "Eval: define SLOs and failure budgets for the serving stack. Deploy: operate a multi-node run with an on-call checklist."
+    },
+    {
+      "id": "L09", "group": "engineering",
+      "name_en": "Product & business", "name_zh": "产品与商业",
+      "one_en": "Use-case selection, ROI, supply chain, roadmap",
+      "one_zh": "场景选择、ROI、供应链、路线",
+      "dims": { "design": 1, "build": 0, "eval": 1, "deploy": 0 },
+      "evidence_ids": [],
+      "review_date": "2026-11-10",
+      "gap_plan": "Design: publish one ROI model with explicit assumptions. Build: build the cost model as a spreadsheet, not prose. Deploy: attach it to a real pilot decision."
+    }
+  ]
+}

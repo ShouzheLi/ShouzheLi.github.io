@@ -5,8 +5,7 @@
 
   /* ---------- theme ---------- */
   const stored = localStorage.getItem('pa-theme');
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  root.setAttribute('data-theme', stored || (prefersDark ? 'dark' : 'light'));
+  root.setAttribute('data-theme', stored || 'light');
   $$('.theme-toggle').forEach((btn) => {
     btn.addEventListener('click', () => {
       const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';

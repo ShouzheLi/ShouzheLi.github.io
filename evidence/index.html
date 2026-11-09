@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" data-lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evidence · Shouzhe Li</title>
+  <meta name="description" content="Dated evidence entries behind every capability claim.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
+</head>
+<body data-page="evidence">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/index.html">
+      <span class="brand-mark">PA</span>
+      <span class="brand-text">Shouzhe Li<small><span class="t-en">EMBODIED AI · FULL STACK</span><span class="t-zh">具身智能 · 全栈</span></small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="/index.html"><span class="t-en">Home</span><span class="t-zh">首页</span></a>
+      <a href="/capabilities/index.html"><span class="t-en">Capabilities</span><span class="t-zh">能力</span></a>
+      <a href="/projects/index.html"><span class="t-en">Projects</span><span class="t-zh">项目</span></a>
+      <a href="/evidence/index.html" aria-current="page"><span class="t-en">Evidence</span><span class="t-zh">证据</span></a>
+      <a href="/radar/index.html"><span class="t-en">Radar</span><span class="t-zh">雷达</span></a>
+    </nav>
+    <div class="header-actions">
+      <div class="lang-toggle" role="group" aria-label="Switch language">
+        <button type="button" data-lang-option="en" aria-pressed="true" lang="en">EN</button>
+        <button type="button" data-lang-option="zh" aria-pressed="false" lang="zh-CN">中文</button>
+      </div>
+      <button class="icon-btn theme-toggle" type="button" aria-label="Toggle color theme">
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg>
+      </button>
+      <button class="icon-btn menu-btn" type="button" aria-label="Menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+  <main id="main">
+    <section class="list-hero">
+      <div class="wrap">
+        <p class="eyebrow"><span class="t-en">Evidence</span><span class="t-zh">证据</span></p>
+        <h1 class="display"><span class="t-en">Every claim carries a status, a date and a boundary.</span><span class="t-zh">每条声明都带状态、日期与边界。</span></h1>
+        <p class="lede"><span class="t-en">11 entries. Measured means a number with a condition; method means a procedure, not a result.</span><span class="t-zh">共 11 条。实测 = 有数字且有条件；方法 = 是流程，不是结果。</span></p>
+        <div class="filters" role="group" aria-label="Filter by layer">
+          <button class="filter is-active" type="button" data-filter="all">All</button>
+          <button class="filter" type="button" data-filter="L01">L01 <span class="t-en">Perception & sensing</span><span class="t-zh">感知与传感</span></button>
+          <button class="filter" type="button" data-filter="L02">L02 <span class="t-en">Body & actuation</span><span class="t-zh">本体与执行</span></button>
+          <button class="filter" type="button" data-filter="L03">L03 <span class="t-en">Motion control & manipulation</span><span class="t-zh">运动控制与操作</span></button>
+          <button class="filter" type="button" data-filter="L04">L04 <span class="t-en">Understanding & mapping</span><span class="t-zh">理解与建图</span></button>
+          <button class="filter" type="button" data-filter="L05">L05 <span class="t-en">Cognition & decision</span><span class="t-zh">认知与决策</span></button>
+          <button class="filter" type="button" data-filter="L06">L06 <span class="t-en">Data & training</span><span class="t-zh">数据与训练</span></button>
+          <button class="filter" type="button" data-filter="L07">L07 <span class="t-en">Simulation & evaluation</span><span class="t-zh">仿真与评测</span></button>
+          <button class="filter" type="button" data-filter="L08">L08 <span class="t-en">Deployment & operations</span><span class="t-zh">部署与运维</span></button>
+          <button class="filter" type="button" data-filter="L09">L09 <span class="t-en">Product & business</span><span class="t-zh">产品与商业</span></button>
+        </div>
+      </div>
+    </section>
+    <section class="section section-flush"><div class="wrap"><div class="entry-list">
+        <article class="entry reveal" id="E-2026-10-26-01" data-tags="L06 design documented">
+          <div class="entry-no">01</div>
+          <div class="entry-main">
+            <div class="entry-meta"><span class="badge badge--documented">DOCUMENTED</span><span>2026-10-26</span><span>L06 Data & training · design</span></div>
+            <h3 class="entry-title"><span class="t-en">Post-training data and action contracts audited against RLinf</span><span class="t-zh">对照 RLinf 审计后训练数据与动作契约</span></h3>
+            <p class="entry-sum"><span class="t-en">A file-level diff against a fixed upstream: 1925 identical, 225 added, 61 modified.</span><span class="t-zh">对固定上游做全文件比较：1925 相同、225 新增、61 修改。</span></p>
+            <dl class="entry-fields">
+              <dt>Condition</dt><dd>Fixed upstream commit e42803e1; no git history available.</dd>
+              <dt>Boundary</dt><dd>A diff shows where, not why; no training gain is claimed.</dd>
+              <dt>Source</dt><dd><code>skill references/20-rlinf-posttraining-delta.md</code></dd>
+            </dl>
+            <details class="entry-detail">
+              <summary><span class="t-en">Method and result</span><span class="t-zh">做法与结果</span></summary>
+              <p><strong>Q</strong> Where does our post-training stack actually differ from upstream?</p>
+              <p><strong>M</strong> Pin an upstream commit, compare every file byte-wise, then read the data, SFT, DAgger and RLT replay paths.</p>
+              <p><strong>R</strong> 2211 input files compared; differences located and classified by subsystem.</p>
+            </details>
+          </div>
+        </article>
+        <article class="entry reveal" id="E-2026-10-23-01" data-tags="L04 design method">
+          <div class="entry-no">02</div>
+          <div class="entry-main">
+            <div class="entry-meta"><span class="badge badge--method">METHOD</span><span>2026-10-23</span><span>L04 Understanding & mapping · design</span></div>
+            <h3 class="entry-title"><span class="t-en">Real2Sim evidence layering before touching geometry</span><span class="t-zh">动几何之前先分层证据</span></h3>
+            <p class="entry-sum"><span class="t-en">CAD proves design data, not identity; video constrains silhouette; ICP is local refinement after a coarse pose.</span><span class="t-zh">CAD 只证明设计数据，不证明型号一致；视频约束轮廓；ICP 是粗对齐后的局部精配准。</span></p>
+            <dl class="entry-fields">
+              <dt>Condition</dt><dd>Method note from a review of CAD, video and inspection images.</dd>
+              <dt>Boundary</dt><dd>No asset was accepted by this entry; it is a procedure, not a validation result.</dd>
+              <dt>Source</dt><dd><code>skill references/18-real2sim-evidence-decisions.md</code></dd>
+            </dl>
+            <details class="entry-detail">
+              <summary><span class="t-en">Method and result</span><span class="t-zh">做法与结果</span></summary>
+              <p><strong>Q</strong> Which source should decide geometry when CAD and footage disagree?</p>
+              <p><strong>M</strong> Separate identity, interface, silhouette and contact evidence; verify scale on one static part before scaling to many.</p>
+              <p><strong>R</strong> A decision procedure with explicit failure modes for reflective, repeated or occluded parts.</p>
+            </details>
+          </div>
+        </article>
+        <article class="entry reveal" id="E-2026-10-16-06" data-tags="L05 eval documented">
+          <div class="entry-no">03</div>
+          <div class="entry-main">
+            <div class="entry-meta"><span class="badge badge--documented">DOCUMENTED</span><span>2026-10-16</span><span>L05 Cognition & decision · eval</span></div>
+            <h3 class="entry-title"><span class="t-en">Eleven VLA checkpoints scored through one protocol surface</span><span class="t-zh">11 个 VLA 档案走同一套评测口径</span></h3>
+            <p class="entry-sum"><span class="t-en">Profiles differ in action space, waist width and output domain; the harness normalizes them before scoring.</span><span class="t-zh">各档案的动作空间、腰维度与输出域不同，评测前统一归一化。</span></p>
+            <dl class="entry-fields">
+              <dt>Condition</dt><dd>Platform snapshot 2026-10-14; private checkpoints.</dd>
+              <dt>Boundary</dt><dd>Comparability stops at the declared protocol; adapters can mask real capability differences.</dd>
+              <dt>Source</dt><dd><code>skill references/06-model-serving.md; SKILL.md status block</code></dd>
+            </dl>
+            <details class="entry-detail">
+              <summary><span class="t-en">Method and result</span><span class="t-zh">做法与结果</span></summary>
+              <p><strong>Q</strong> Can heterogeneous VLA checkpoints be compared without hiding their differences?</p>
+              <p><strong>M</strong> Declare per-profile adapters (delta/shift, waist dims, absolute domain), then run one protocol and one scoring rule.</p>
+              <p><strong>R</strong> 11 profiles evaluated; mismatches produced visible failures instead of silent bad scores.</p>
+            </details>
+          </div>
+        </article>
+        <article class="entry reveal" id="E-2026-10-16-05" data-tags="L08 build measured">
+          <div class="entry-no">04</div>
+          <div class="entry-main">
+            <div class="entry-meta"><span class="badge badge--measured">MEASURED</span><span>2026-10-16</span><span>L08 Deployment & operations · build</span></div>
+            <h3 class="entry-title"><span class="t-en">Server-first ordering prevents the OOM freeze</span><span class="t-zh">先起 server 再起引擎，避免 OOM 卡死</span></h3>
+            <p class="entry-sum"><span class="t-en">A 13.45 GB fp32 copy plus an 8-9 GB engine kills the host; the gate is 12697 MiB free VRAM.</span><span class="t-zh">13.45 GB fp32 副本叠加 8-9 GB 引擎会卡死；闸门是空闲显存 12697 MiB。</span></p>
+            <dl class="entry-fields">
+              <dt>Condition</dt><dd>This host, this checkpoint, this engine build.</dd>
+              <dt>Boundary</dt><dd>Memory budget is machine-specific; the gate must be re-measured on new hardware.</dd>
+              <dt>Source</dt><dd><code>ski</code></dd>
+            </dl>
+            <details class="entry-detail">
+              <summary><span class="t-en">Method and result</span><span class="t-zh">做法与结果</span></summary>
+              <p><strong>Q</strong> What is the safe startup order for model serving and simulation?</p>
+              <p><strong>M</strong> Start the model server, wait for load and steady state, check free VRAM, then start the engine.</p>
+              <p><strong>R</strong> No OOM freeze under the gate; reversing the order reproduced the freeze.</p>
+            </details>
+          </div>
+        </article>
+        <article class="entry reveal" id="E-2026-10-16-04" data-tags="L08 build documented">
+          <div class="entry-no">05</div>
+          <div class="entry-main">
+            <div class="entry-meta"><span class="badge badge--documented">DOCUMENTED</span><span>2026-10-16</span><span>L08 Deployment & operations · build</span></div>
+            <h3 class="entry-title"><span class="t-en">Action-space adapters per checkpoint, not one global transform</span><span class="t-zh">动作空间按档案适配，没有全局变换</span></h3>
+            <p class="entry-sum"><span class="t-en">Delta/shift transforms, waist width and absolute-domain servers each broke policies differently.</span><span class="t-zh">增量/移位、腰维度、绝对域服务各自以不同方式把策略弄坏。</span></p>
+            <dl class="entry-fields">
+              <dt>Condition</dt><dd>11 model profiles on one platform; fixes are per-profile.</dd>
+              <dt>Boundary</dt><dd>Fixes do not transfer to new checkpoints; each one needs revalidation.</dd>
+              <dt>Source</dt><dd><code>skill references/06-model-serving.md section 7</code></dd>
+            </dl>
+            <details class="entry-detail">
+              <summary><span class="t-en">Method and result</span><span class="t-zh">做法与结果</span></summary>
+              <p><strong>Q</strong> Why do some checkpoints swing wildly or hit joint limits?</p>
+              <p><strong>M</strong> Read each profile for extra delta transform, joint shifts, waist dimensions and server-side state addition; adapt client-side.</p>
+              <p><strong>R</strong> Three distinct root causes fixed; policies returned to normal tracking.</p>
+            </details>
+          </div>
+        </article>
+        <article class="entry reveal" id="E-2026-10-16-03" data-tags="L01 eval measured">
+          <div class="entry-no">06</div>
+          <div class="entry-main">
+            <div class="entry-meta"><span class="badge badge--measured">MEASURED</span><span>2026-10-16</span><span>L01 Perception & sensing · eval</span></div>
+            <h3 class="entry-title"><span class="t-en">Camera calibration judged in the image domain, not by a proxy</span><span class="t-zh">相机标定用图像域判据，不用代理指标</span></h3>
+            <p class="entry-sum"><span class="t-en">A proxy check passed while brightness sat at 74 against the official 141-148 band.</span><span class="t-zh">代理判据通过了，但亮度只有 74，官方区间是 141-148。</span></p>
+            <dl class="entry-fields">
+              <dt>Condition</dt><dd>Same scene and camera rig; official reference band 141-148.</dd>
+              <dt>Boundary</dt><dd>Brightness, blob and geometry only; does not prove photometric accuracy.</dd>
+              <dt>Source</dt><dd><code>skill SKILL.md, "most expensive mistakes" #2</code></dd>
+            </dl>
+            <details class="entry-detail">
+              <summary><span class="t-en">Method and result</span><span class="t-zh">做法与结果</span></summary>
+              <p><strong>Q</strong> How do you tell a real camera calibration from a fake one?</p>
+              <p><strong>M</strong> Compare rendered brightness, blob position and geometry against the official reference; reject non-image proxies.</p>
+              <p><strong>R</strong> The invalid calibration was caught; a full evaluation round was invalidated and rerun.</p>
+            </details>
+          </div>
+        </article>
+        <article class="entry reveal" id="E-2026-10-16-02" data-tags="L07 build documented">
+          <div class="entry-no">07</div>
+          <div class="entry-main">
+            <div class="entry-meta"><span class="badge badge--documented">DOCUMENTED</span><span>2026-10-16</span><span>L07 Simulation & evaluation · build</span></div>
+            <h3 class="entry-title"><span class="t-en">Scene onboarding locked by contract tests before any score exists</span><span class="t-zh">场景接入先被契约测试锁住，再谈分数</span></h3>
+            <p class="entry-sum"><span class="t-en">33 scene YAMLs and 200 contract tests hold the wiring; counts are a snapshot and drift.</span><span class="t-zh">33 个场景 yaml、200 条契约测试锁住接线；数字是快照，会漂移。</span></p>
+            <dl class="entry-fields">
+              <dt>Condition</dt><dd>Platform snapshot on that date; live counts differ.</dd>
+              <dt>Boundary</dt><dd>Counts are a snapshot, not a quality claim; passing tests do not prove fidelity.</dd>
+              <dt>Source</dt><dd><code>skill SKILL.md status block; references/02-scene-authoring.md</code></dd>
+            </dl>
+            <details class="entry-detail">
+              <summary><span class="t-en">Method and result</span><span class="t-zh">做法与结果</span></summary>
+              <p><strong>Q</strong> How do you stop a scene from silently drifting between runs?</p>
+              <p><strong>M</strong> Declare assets, poses, physics, cameras and reset events once; assert them with contract tests.</p>
+              <p><strong>R</strong> 33 scenes and 200 contract tests at the 2026-10-16 snapshot.</p>
+            </details>
+          </div>
+        </article>
+        <article class="entry reveal" id="E-2026-10-16-01" data-tags="L07 eval measured">
+          <div class="entry-no">08</div>
+          <div class="entry-main">
+            <div class="entry-meta"><span class="badge badge--measured">MEASURED</span><span>2026-10-16</span><span>L07 Simulation & evaluation · eval</span></div>
+            <h3 class="entry-title"><span class="t-en">Renderer and camera domain move the score by 55 points</span><span class="t-zh">渲染器与相机域能让分数变动 55 个点</span></h3>
+            <p class="entry-sum"><span class="t-en">Same model, same scene, same checkpoint. Only the render mode and camera domain changed.</span><span class="t-zh">同一模型、同一场景、同一 ckpt，只改渲染模式与相机域。</span></p>
+            <dl class="entry-fields">
+              <dt>Condition</dt><dd>Headless evaluation machine, frozen kit hash, same checkpoint, same batch size.</dd>
+              <dt>Boundary</dt><dd>Proves measurement sensitivity, not a model improvement; not a sim-to-real claim.</dd>
+              <dt>Source</dt><dd><code>skill references/03-camera-rendering.md; SKILL.md rule #1</code></dd>
+            </dl>
+            <details class="entry-detail">
+              <summary><span class="t-en">Method and result</span><span class="t-zh">做法与结果</span></summary>
+              <p><strong>Q</strong> Is a simulation score a property of the model, or of the measurement stack?</p>
+              <p><strong>M</strong> Freeze model, scene, protocol and episode budget; switch the render mode and camera domain; rerun identical batches.</p>
+              <p><strong>R</strong> 30% under RaytracedLighting with a raw camera; 85% under path tracing with the camera domain applied.</p>
+            </details>
+          </div>
+        </article>
+        <article class="entry reveal" id="E-2026-10-15-01" data-tags="L03 build measured">
+          <div class="entry-no">09</div>
+          <div class="entry-main">
+            <div class="entry-meta"><span class="badge badge--measured">MEASURED</span><span>2026-10-15</span><span>L03 Motion control & manipulation · build</span></div>
+            <h3 class="entry-title"><span class="t-en">Damped CLIK: 0.002 converges, 0.01 stalls</span><span class="t-zh">阻尼 CLIK：0.002 收敛，0.01 停滞</span></h3>
+            <p class="entry-sum"><span class="t-en">A four-joint probe converged to 4.0 mm in 12 steps; all seven joints diverged.</span><span class="t-zh">4 关节探针 12 步收敛到 4.0 mm；全 7 关节发散。</span></p>
+            <dl class="entry-fields">
+              <dt>Condition</dt><dd>One arm configuration, one probe task, simulated proprioception.</dd>
+              <dt>Boundary</dt><dd>Not a general controller claim; gains are task- and arm-specific.</dd>
+              <dt>Source</dt><dd><code>skill references/04-physics-grasping.md, servo details</code></dd>
+            </dl>
+            <details class="entry-detail">
+              <summary><span class="t-en">Method and result</span><span class="t-zh">做法与结果</span></summary>
+              <p><strong>Q</strong> What damping and step policy makes the servo usable near contact?</p>
+              <p><strong>M</strong> Sweep damping, use the measured joint state each tick, normalize step by the largest component, gate phase switches on arrival.</p>
+              <p><strong>R</strong> 0.01 stalls around 14 mm; 0.002 reaches 4.0 mm in 12 steps; near contact the Jacobian magnitude drops 0.295 to 0.067 m/rad.</p>
+            </details>
+          </div>
+        </article>
+        <article class="entry reveal" id="E-2026-09-21-01" data-tags="L02 build measured">
+          <div class="entry-no">10</div>
+          <div class="entry-main">
+            <div class="entry-meta"><span class="badge badge--measured">MEASURED</span><span>2026-09-21</span><span>L02 Body & actuation · build</span></div>
+            <h3 class="entry-title"><span class="t-en">Gripper assembly ended at 42 bodies and 34 driven DOF</span><span class="t-zh">夹爪装配后 42 刚体、34 个驱动自由度</span></h3>
+            <p class="entry-sum"><span class="t-en">Installing the gripper exposed a root-joint anchor and a row-vector multiplication order error.</span><span class="t-zh">夹爪装配暴露了根关节被锚定和行向量乘序写反两个问题。</span></p>
+            <dl class="entry-fields">
+              <dt>Condition</dt><dd>G2 omnipicker USD, Isaac Sim 6.0.1 platform asset.</dd>
+              <dt>Boundary</dt><dd>Geometry and assembly validation only; no grasp-success claim.</dd>
+              <dt>Source</dt><dd><code>skill references/04-physics-grasping.md C1</code></dd>
+            </dl>
+            <details class="entry-detail">
+              <summary><span class="t-en">Method and result</span><span class="t-zh">做法与结果</span></summary>
+              <p><strong>Q</strong> Can the end effector be assembled into the existing USD without breaking joints?</p>
+              <p><strong>M</strong> Rebuild the assembly, fix the left root joint anchor, recompute the mount transform as X_body1 * inv(X_body0).</p>
+              <p><strong>R</strong> 56 to 42 rigid bodies; 34 driven DOF; 9.6 mm clearance per side.</p>
+            </details>
+          </div>
+        </article>
+        <article class="entry reveal" id="E-2026-09-15-01" data-tags="L07 build documented">
+          <div class="entry-no">11</div>
+          <div class="entry-main">
+            <div class="entry-meta"><span class="badge badge--documented">DOCUMENTED</span><span>2026-09-15</span><span>L07 Simulation & evaluation · build</span></div>
+            <h3 class="entry-title"><span class="t-en">Starting the engine without renderer injection froze the host</span><span class="t-zh">不注入渲染器就起引擎，整机卡死</span></h3>
+            <p class="entry-sum"><span class="t-en">The first real run needed a launcher patch; without it the machine became unresponsive.</span><span class="t-zh">首次实跑需要 launcher patch；缺失时整机无响应。</span></p>
+            <dl class="entry-fields">
+              <dt>Condition</dt><dd>Single evaluation host; platform launcher entry point.</dd>
+              <dt>Boundary</dt><dd>One incident, not a benchmark; root cause tied to this launcher, not to Isaac in general.</dd>
+              <dt>Source</dt><dd><code>skill SKILL.md, "most expensive mistakes" #1</code></dd>
+            </dl>
+            <details class="entry-detail">
+              <summary><span class="t-en">Method and result</span><span class="t-zh">做法与结果</span></summary>
+              <p><strong>Q</strong> What happens when the render pipeline is left at the default?</p>
+              <p><strong>M</strong> Launch the platform engine entry without the launcher patch; observe host state and logs.</p>
+              <p><strong>R</strong> Host froze. With the patch injected the log shows renderer=RealTimePathTracing and the engine runs.</p>
+            </details>
+          </div>
+        </article>
+    </div></div></section>
+  </main>
+  <footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <span class="brand-mark" aria-hidden="true">PA</span>
+      <span>&copy; <span data-year>2026</span> Shouzhe Li. <span class="t-en">Built with static HTML/CSS/JS.</span><span class="t-zh">纯静态 HTML/CSS/JS 构建。</span></span>
+    </div>
+    <div class="footer-links">
+      <a href="/capabilities/index.html"><span class="t-en">Capabilities</span><span class="t-zh">能力</span></a>
+      <a href="/projects/index.html"><span class="t-en">Projects</span><span class="t-zh">项目</span></a>
+      <a href="/evidence/index.html"><span class="t-en">Evidence</span><span class="t-zh">证据</span></a>
+      <a href="/radar/index.html"><span class="t-en">Radar</span><span class="t-zh">雷达</span></a>
+      <a href="https://github.com/ShouzheLi" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</footer>
+  <script src="/assets/js/i18n.js"></script>
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>
