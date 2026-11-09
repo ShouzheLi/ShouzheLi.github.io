@@ -100,7 +100,7 @@ The pre-redesign version is preserved on branch `backup/pre-redesign-2026-11-10`
 
 ## Pending
 
-- Hero: full-bleed Three.js scene behind the name (`assets/js/hero-three.js`), using a Unitree G1 USD from the local Isaac Sim install converted to Draco GLB. Pointer and scroll drive the camera and model; a static SVG fallback shows until the scene is ready.
+- Hero: full-bleed Three.js scene behind the name (`assets/js/hero-three.js`), using a Unitree G1 USD from the local Isaac Sim install converted to Draco GLB. The GLB keeps the named joint hierarchy, so the right arm is driven directly by pointer and scroll; a point-cloud surface and wireframe grid form the backdrop; a static SVG fallback shows until the scene is ready.
 - GitHub repositories for the project pages; all except SIM-EVAL are marked "GitHub pending".
 - Project media (stills or clips) for the five new case pages; they are text-only for now.
 

@@ -84,18 +84,22 @@
             <h2 class="section-title"><span class="t-en">Profile</span><span class="t-zh">个人简介</span></h2>
           </div>
         </div>
-                <ul class="intro-list reveal">
+                        <ul class="intro-list reveal">
           <li>
             <span class="n">01</span>
-            <span><span class="t-en">Full-stack coverage: perception, motion control, simulation, evaluation, data and training, serving — not a single layer.</span><span class="t-zh">全栈覆盖：感知、运动控制、仿真、评测、数据与训练、模型服务——不是单点能力。</span></span>
+            <span><span class="t-en">Robotics engineer with a full-stack remit: perception and calibration, motion control, simulation and evaluation, VLA post-training, and deployment — usually on the same system.</span><span class="t-zh">机器人全栈工程师：感知与标定、运动控制、仿真评测、VLA 后训练、部署，通常在同一套系统里完成。</span></span>
           </li>
           <li>
             <span class="n">02</span>
-            <span><span class="t-en">Built real systems: 49 video-reconstructed assets, cloth parameter fitting, a soft-body data flywheel, and evaluation across 11 VLA checkpoints.</span><span class="t-zh">做过真实系统：49 项视频重建资产、布料参数拟合、柔性物体数据飞轮，以及 11 个 VLA 档案的评测。</span></span>
+            <span><span class="t-en">Built a reproducible evaluation stack for VLA models on Isaac Sim / Isaac Lab, covering scene onboarding, rendering fidelity, tiered protocols and silent-failure audits; the same pipeline produced 49 reconstructed assets and a deformable-object data loop.</span><span class="t-zh">在 Isaac Sim / Isaac Lab 上搭建面向 VLA 的可复现评测栈，覆盖场景接入、渲染保真、分层协议与静默失效审计；同一条管线产出了 49 项重建资产和柔性物体数据闭环。</span></span>
           </li>
           <li>
             <span class="n">03</span>
-            <span><span class="t-en">Engineering base from outside robotics: scheduling optimization, 200k lines of industrial C# code, OPC telemetry — the interfaces that decide whether a system ships.</span><span class="t-zh">工程底子来自机器人之外：排产优化、20 万行工业 C# 代码、OPC 采集——决定系统能不能交付的往往是这些接口。</span></span>
+            <span><span class="t-en">Background in operations research and supply chain: scheduling kernels, 200k+ lines of industrial C# control code, OPC telemetry. The habit of measuring interfaces comes from there.</span><span class="t-zh">此前做运筹与供应链：排产内核、20 万行工业 C# 控制代码、OPC 采集。对接口与量测的重视来自这段经历。</span></span>
+          </li>
+          <li>
+            <span class="n">04</span>
+            <span><span class="t-en">Currently working on sim-to-real evaluation, real2sim reconstruction, soft-body simulation, and the training-to-deployment path for manipulation policies.</span><span class="t-zh">目前专注 sim-to-real 评测、Real2Sim 重建、柔性物体仿真，以及操作策略从训练到部署的完整路径。</span></span>
           </li>
         </ul>
       </div>
@@ -109,7 +113,7 @@
             <h2 class="section-title"><span class="t-en">Research focus</span><span class="t-zh">研究兴趣</span></h2>
           </div>
         </div>
-                        <div class="interest-grid reveal">
+                                <div class="interest-grid reveal">
           <article class="interest">
             <h3><span class="t-en">Perception &amp; state estimation</span><span class="t-zh">感知与状态估计</span></h3>
             <p><span class="t-en">Cameras and calibration, 3D reconstruction, real2sim assets, and the state estimates a policy actually consumes.</span><span class="t-zh">相机与标定、3D 重建、Real2Sim 资产，以及策略真正消费的状态估计。</span></p>
@@ -123,8 +127,12 @@
             <p><span class="t-en">Isaac Sim / Lab and Newton, rendering fidelity, protocols, and a sim-real gap that is measured rather than assumed.</span><span class="t-zh">Isaac Sim / Lab 与 Newton、渲染保真、评测协议，以及被量测而不是被假设的虚实差距。</span></p>
           </article>
           <article class="interest">
-            <h3><span class="t-en">World models &amp; RSI</span><span class="t-zh">世界模型与 RSI</span></h3>
-            <p><span class="t-en">Prediction, causal reasoning and recursive self-improvement: how a policy gets better without a human in the loop.</span><span class="t-zh">预测、因果推理与递归自我改进：策略如何在没有人类介入的情况下变强。</span></p>
+            <h3><span class="t-en">World models</span><span class="t-zh">世界模型</span></h3>
+            <p><span class="t-en">Learned dynamics and outcome prediction: using a simulator as a planning tool and a data generator, not only a scorer.</span><span class="t-zh">学习动力学与结果预测：把仿真器当作规划工具和数据生成器，而不只是打分器。</span></p>
+          </article>
+          <article class="interest">
+            <h3><span class="t-en">RSI · recursive self-improvement</span><span class="t-zh">RSI · 递归自我改进</span></h3>
+            <p><span class="t-en">Closing the loop from evaluation to data to policy update, with measurable gains and explicit safety bounds.</span><span class="t-zh">把评测、数据与策略更新接成闭环，要求可量测的提升和明确的安全边界。</span></p>
           </article>
           <article class="interest">
             <h3><span class="t-en">Training &amp; deployment</span><span class="t-zh">训练与部署</span></h3>
