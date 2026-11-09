@@ -16,7 +16,7 @@ NAV = [
     ("home", "/index.html", "Home", "首页"),
     ("capabilities", "/capabilities/index.html", "Capabilities", "能力"),
     ("projects", "/projects/index.html", "Projects", "项目"),
-    ("evidence", "/evidence/index.html", "Evidence", "证据"),
+    ("record", "/record/index.html", "Record", "记录"),
     ("radar", "/radar/index.html", "Radar", "雷达"),
 ]
 
@@ -49,12 +49,12 @@ FOOTER = """<footer class="site-footer">
   <div class="wrap footer-inner">
     <div class="footer-brand">
       <span class="brand-mark" aria-hidden="true">PA</span>
-      <span>&copy; <span data-year>2026</span> Shouzhe Li. <span class="t-en">Built with static HTML/CSS/JS.</span><span class="t-zh">纯静态 HTML/CSS/JS 构建。</span></span>
+      <span>&copy; <span data-year>2026</span> Shouzhe Li.</span>
     </div>
     <div class="footer-links">
       <a href="/capabilities/index.html"><span class="t-en">Capabilities</span><span class="t-zh">能力</span></a>
       <a href="/projects/index.html"><span class="t-en">Projects</span><span class="t-zh">项目</span></a>
-      <a href="/evidence/index.html"><span class="t-en">Evidence</span><span class="t-zh">证据</span></a>
+      <a href="/record/index.html"><span class="t-en">Record</span><span class="t-zh">记录</span></a>
       <a href="/radar/index.html"><span class="t-en">Radar</span><span class="t-zh">雷达</span></a>
       <a href="https://github.com/ShouzheLi" target="_blank" rel="noopener">GitHub</a>
     </div>
@@ -211,8 +211,8 @@ def build_lists():
     ev_cards = "\n".join(evidence_card(e, i + 1, layers) for i, e in enumerate(evidence))
     ev_body = f"""    <section class="list-hero">
       <div class="wrap">
-        <p class="eyebrow">{dual("Evidence", "证据")}</p>
-        <h1 class="display">{dual("Every claim carries a status, a date and a boundary.", "每条声明都带状态、日期与边界。")}</h1>
+        <p class="eyebrow">{dual("Record", "记录")}</p>
+        <h1 class="display">{dual("Records with a status, a condition and a boundary.", "带状态、条件与边界的记录。")}</h1>
         <p class="lede">{dual(f"{len(evidence)} entries. Measured means a number with a condition; method means a procedure, not a result.", f"共 {len(evidence)} 条。实测 = 有数字且有条件；方法 = 是流程，不是结果。")}</p>
         <div class="filters" role="group" aria-label="Filter by layer">
           {filter_html}
@@ -222,8 +222,8 @@ def build_lists():
     <section class="section section-flush"><div class="wrap"><div class="entry-list">
 {ev_cards}
     </div></div></section>"""
-    changed.append(write_if_changed(BASE / "evidence" / "index.html",
-                                    shell("Evidence · Shouzhe Li", "evidence", ev_body,
+    changed.append(write_if_changed(BASE / "record" / "index.html",
+                                    shell("Record · Shouzhe Li", "record", ev_body,
                                           "Dated evidence entries behind every capability claim.")))
 
     rd_cards = "\n".join(radar_card(e, i + 1, layers) for i, e in enumerate(radar))
@@ -259,11 +259,11 @@ def inject_home(evidence, radar):
                 f'<a href="/{folder}/index.html#{entry["id"]}">{dual(entry.get("title_en",""), entry.get("title_zh",""))}</a>'
                 f'<span class="when">{entry.get("date","")}</span></li>')
 
-    latest_ev = "\n".join(item(e, i, "evidence") for i, e in enumerate(evidence[:3]))
+    latest_ev = "\n".join(item(e, i, "record") for i, e in enumerate(evidence[:3]))
     latest_rd = "\n".join(item(e, i, "radar") for i, e in enumerate(radar[:3]))
     rs = load_json("facts.json")["facts"]["render_sensitivity"]
     stats = (
-        f'<div class="stat"><strong>{len(evidence)}</strong><span>{dual("evidence entries", "条证据", "em")}</span></div>'
+        f'<div class="stat"><strong>{len(evidence)}</strong><span>{dual("records", "条记录", "em")}</span></div>'
         f'<div class="stat"><strong>{len(radar)}</strong><span>{dual("radar signals", "条雷达", "em")}</span></div>'
         f'<div class="stat"><strong>{rs["value"]}{rs["unit"]}</strong><span>{dual("render sensitivity", "渲染口径敏感性", "em")}</span></div>'
         f'<div class="stat"><strong>{max(e.get("date","") for e in evidence + radar)}</strong><span>{dual("last update", "最后更新", "em")}</span></div>'
