@@ -266,6 +266,23 @@ p { margin: 0; }
   color: var(--muted);
   background: linear-gradient(transparent, color-mix(in srgb, var(--bg) 88%, transparent));
 }
+.hero-scene {
+  background: var(--bg-elev);
+}
+.hero-fallback { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.hero-scene.is-live .hero-fallback { display: none; }
+.hero-scene canvas { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; }
+.hero-role { font-size: clamp(18px, 1.8vw, 22px); color: var(--muted); margin-top: 14px; letter-spacing: -.01em; }
+
+/* ---------- intro / focus / skills ---------- */
+.intro-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; max-width: 74ch; }
+.intro-list li { display: grid; grid-template-columns: 30px 1fr; gap: 14px; font-size: 16px; color: var(--ink-2); }
+.intro-list .n { font-family: var(--mono); font-size: 11px; color: var(--faint); padding-top: 4px; }
+.interest-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.interest { background: var(--bg); padding: 26px 24px; }
+.interest h3 { font-size: 19px; letter-spacing: -.01em; }
+.interest p { margin-top: 8px; font-size: 14px; color: var(--muted); }
+.skill-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
 
 /* ---------- stats ---------- */
 .stats {
@@ -654,6 +671,7 @@ p { margin: 0; }
   .hero-grid { gap: 36px; }
   .cap-grid { grid-template-columns: repeat(2, 1fr); }
   .project-grid, .gap-grid, .focus-grid { grid-template-columns: repeat(2, 1fr); }
+  .skill-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 760px) {
   :root { --pad: 18px; }
@@ -686,6 +704,7 @@ p { margin: 0; }
   .section { padding: 56px 0; }
   .section-head { flex-direction: column; align-items: flex-start; gap: 12px; margin-bottom: 28px; }
   .cap-grid, .project-grid, .gap-grid, .focus-grid { grid-template-columns: 1fr; }
+  .interest-grid, .skill-grid { grid-template-columns: 1fr; }
   .entry { grid-template-columns: 44px 1fr; gap: 14px; padding: 26px 0; }
   .entry-no { font-size: 26px; }
   .entry-title { font-size: 19px; }

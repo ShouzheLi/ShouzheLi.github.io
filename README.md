@@ -1,22 +1,22 @@
 # Shouzhe Li · embodied AI capability archive
 
-Static site. No framework, no build step at deploy time. The content model lives in `content/`; the pages under `evidence/` and `radar/` are generated from it.
+Static site. No framework, no build step at deploy time. The content model lives in `content/`; the pages under `record/` and `radar/` are generated from it.
 
 ## Structure
 
 ```
-index.html               Home: hero, 3x3 capability grid, latest evidence, latest radar, gaps, method
+index.html               Home: self-introduction (profile, focus, experience, skills) + canvas hero
 capabilities/index.html  Full 9-layer x 4-dimension matrix, ratings, gaps, upgrade rules
-evidence/index.html      Generated from content/evidence/*.md
+record/index.html        Generated from content/evidence/*.md
 radar/index.html         Generated from content/radar/*.md
 projects/                Seven case pages: problem, approach, result, boundary
                          (sim-eval-stack, real2sim, 4d-gen, soft-body-engine,
                           cloth-sysid, rl-platform, embodied-ai-expert)
 content/facts.json       Single source for every number shown on the site
 content/ratings.json     The 9x4 frame: level, evidence ids, review date, gap plan
-content/evidence/*.md    One file per evidence entry
+content/evidence/*.md    One file per record entry
 content/radar/*.md       One file per radar signal
-scripts/build_pages.py   Regenerates the two list pages and the home blocks
+scripts/build_pages.py   Regenerates the two list pages
 scripts/check_site.py    Read-only checks: links, fields, facts expiry, radar freshness, i18n parity, chrome
 assets/                  CSS, JS, fonts, images
 ```
@@ -98,7 +98,7 @@ The pre-redesign version is preserved on branch `backup/pre-redesign-2026-11-10`
 
 ## Pending
 
-- Real hero video (8s loop, <4MB). Until then the hero uses `assets/img/hero-poster.svg` with a labelled slot.
+- Hero: canvas-drawn arm and ribbons (`assets/js/hero-scene.js`) with a static SVG fallback; a rendered video can replace it later.
 - GitHub repositories for the project pages; all except SIM-EVAL are marked "GitHub pending".
 - Project media (stills or clips) for the five new case pages; they are text-only for now.
 
