@@ -86,16 +86,19 @@ function init(host) {
     uniforms: {
       uTime: { value: 0 },
       uColor: { value: new THREE.Color(0x466a9c) },
-      uMouse: { value: new THREE.Vector3(1.6, 0, 0) }
+      uMouse: { value: new THREE.Vector3(1.6, 0, 0) },
+      uFlow: { value: 0 }
     },
     vertexShader: `
       uniform float uTime;
+      uniform float uFlow;
       uniform vec3 uMouse;
       varying float vAlpha;
       void main() {
         vec3 p = position;
-        p.y += sin(p.x * 0.8 + uTime * 0.3) * 0.05;
-        p.x += cos(p.z * 0.9 + uTime * 0.22) * 0.04;
+        p.x = mod(p.x - uFlow, 4.2) + 0.05;
+        p.y += sin(position.x * 0.8 + uTime * 0.3) * 0.05;
+        p.x += cos(position.z * 0.9 + uTime * 0.22) * 0.04;
         float d = distance(p.xz, uMouse.xz);
         float glow = smoothstep(1.5, 0.0, d);
         vec4 mv = modelViewMatrix * vec4(p, 1.0);
@@ -119,6 +122,25 @@ function init(host) {
   });
   const points = new THREE.Points(pGeo, pMat);
   scene.add(points);
+
+  const TILE = 1.2;
+  const streakPts = [];
+  for (let k = 0; k < 4; k++) {
+    for (let i = 0; i < 12; i++) {
+      const x = k * TILE + i * 0.1 + hash(i, k * 3 + 1) * 0.02;
+      const y = 0.12 + hash(i, k * 3 + 2) * 0.7;
+      const z = -1.2 + hash(i, k * 3 + 3) * 2.4;
+      const len = 0.06 + hash(i, k * 3 + 4) * 0.10;
+      streakPts.push(x, y, z, x + len, y, z);
+    }
+  }
+  const streakGeo = new THREE.BufferGeometry();
+  streakGeo.setAttribute('position', new THREE.Float32BufferAttribute(streakPts, 3));
+  const streaks = new THREE.LineSegments(
+    streakGeo,
+    new THREE.LineBasicMaterial({ color: 0x8aa3c8, transparent: true, opacity: 0.45 })
+  );
+  scene.add(streaks);
 
   const arm = {};
 
@@ -202,6 +224,8 @@ function init(host) {
 
   let last = performance.now();
   const start = last;
+  let walk = 0;
+  let flow = 0;
 
   function frame(now) {
     requestAnimationFrame(frame);
@@ -209,6 +233,8 @@ function init(host) {
     const dt = Math.min(0.05, (now - last) / 1000);
     last = now;
     const t = reduce ? 0 : (now - start) / 1000;
+    walk += reduce ? 0 : dt * (0.34 + tp * 1.2);
+    flow += reduce ? 0 : dt * (0.42 + tp * 1.6);
 
     tx += (px - tx) * 0.05;
     ty += (py - ty) * 0.05;
@@ -220,8 +246,12 @@ function init(host) {
 
     robot.rotation.y = -0.28 + tx * 0.30 + tp * 0.25;
     robot.position.x = (portrait ? 0.45 : 1.25) + tx * 0.12;
-    robot.position.y = tp * 0.06 + Math.sin(t * 0.7) * 0.006;
+    robot.position.y = Math.abs(Math.sin(walk * 3.0)) * 0.018 + tp * 0.04;
+    robot.rotation.z = Math.sin(walk * 3.0) * 0.009;
 
+    grid.position.x = -((walk * 0.55) % 0.5);
+    streaks.position.x = -((walk * 0.9) % TILE);
+    pMat.uniforms.uFlow.value = flow % 4.2;
     pMat.uniforms.uTime.value = t;
     pMat.uniforms.uMouse.value.set(0.6 + (tx + 1) * 1.7, 0, 0.1 - ty * 1.3);
     const sh = arm['right_shoulder_pitch_link'];
