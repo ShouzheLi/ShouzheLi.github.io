@@ -51,14 +51,38 @@ function init(host) {
   ground.receiveShadow = true;
   scene.add(ground);
 
+  const shadowCanvas = document.createElement('canvas');
+  shadowCanvas.width = shadowCanvas.height = 256;
+  const sctx = shadowCanvas.getContext('2d');
+  const grad = sctx.createRadialGradient(128, 128, 10, 128, 128, 126);
+  grad.addColorStop(0, 'rgba(0,0,0,0.30)');
+  grad.addColorStop(1, 'rgba(0,0,0,0)');
+  sctx.fillStyle = grad;
+  sctx.fillRect(0, 0, 256, 256);
+  const contact = new THREE.Mesh(
+    new THREE.PlaneGeometry(1.7, 1.0),
+    new THREE.MeshBasicMaterial({ map: new THREE.CanvasTexture(shadowCanvas), transparent: true, depthWrite: false })
+  );
+  contact.rotation.x = -Math.PI / 2;
+  contact.position.y = 0.004;
+  scene.add(contact);
+
   const robot = new THREE.Group();
   scene.add(robot);
 
   const grid = new THREE.GridHelper(18, 36, 0xb2b2b2, 0xd4d4d4);
   grid.position.y = 0.002;
   grid.material.transparent = true;
-  grid.material.opacity = 0.62;
   scene.add(grid);
+
+  const applyGridTheme = () => {
+    grid.material.opacity = document.documentElement.dataset.theme === "dark" ? 0.62 : 0.16;
+  };
+  applyGridTheme();
+  new MutationObserver(applyGridTheme).observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ["data-theme"]
+  });
 
   const hash = (i, s) => {
     const x = Math.sin(i * 12.9898 + s * 78.233) * 43758.5453;
@@ -142,15 +166,19 @@ function init(host) {
   );
   scene.add(streaks);
 
-  const arm = {};
+  const links = {};
+  let walkData = null;
+  let loaded = false;
 
   const draco = new DRACOLoader();
   draco.setDecoderPath('/assets/js/vendor/libs/draco/gltf/');
   const loader = new GLTFLoader();
   loader.setDRACOLoader(draco);
 
-  let loaded = false;
-  loader.load('/assets/models/g1_draco.glb', (gltf) => {
+  Promise.all([
+    new Promise((resolve, reject) => loader.load('/assets/models/g1_walk.glb', resolve, undefined, reject)),
+    fetch('/assets/models/g1_walk.json').then((r) => r.json())
+  ]).then(([gltf, data]) => {
     const model = gltf.scene;
     model.traverse((o) => {
       if (o.isMesh) {
@@ -173,16 +201,20 @@ function init(host) {
     model.position.z -= center.z;
     model.position.y -= box.min.y;
 
-    robot.add(model);
+    const candidates = {};
     model.traverse((o) => {
-      if (o.name && /^right_.*_link$/.test(o.name)) {
-        arm[o.name] = { node: o, base: o.rotation.clone() };
-      }
+      if (!o.name) return;
+      const key = o.name.replace(/\.\d{3}$/, '');
+      if (!candidates[key] || (o.children && o.children.length > 0)) candidates[key] = o;
     });
+    Object.assign(links, candidates);
+
+    robot.add(model);
+    walkData = data;
     loaded = true;
     host.classList.add('is-ready');
     host.closest('.hero-stage')?.classList.add('is-live');
-  }, undefined, (err) => {
+  }).catch((err) => {
     console.error('hero model failed', err);
   });
 
@@ -244,24 +276,29 @@ function init(host) {
     camera.position.y += ((portrait ? 1.75 : 1.35) - ty * 0.12 + tp * 0.05 - camera.position.y) * 0.06;
     camera.lookAt(look);
 
-    robot.rotation.y = -0.28 + tx * 0.30 + tp * 0.25;
+    robot.rotation.y = -1.79 + tx * 0.30 + tp * 0.25;
     robot.position.x = (portrait ? 0.45 : 1.25) + tx * 0.12;
-    robot.position.y = Math.abs(Math.sin(walk * 3.0)) * 0.018 + tp * 0.04;
-    robot.rotation.z = Math.sin(walk * 3.0) * 0.009;
+    robot.position.y = tp * 0.04;
+    contact.position.x = robot.position.x;
 
     grid.position.x = -((walk * 0.55) % 0.5);
     streaks.position.x = -((walk * 0.9) % TILE);
     pMat.uniforms.uFlow.value = flow % 4.2;
     pMat.uniforms.uTime.value = t;
     pMat.uniforms.uMouse.value.set(0.6 + (tx + 1) * 1.7, 0, 0.1 - ty * 1.3);
-    const sh = arm['right_shoulder_pitch_link'];
-    if (sh) sh.node.rotation.x = sh.base.x + Math.sin(t * 0.5) * 0.03;
-    const sr = arm['right_shoulder_roll_link'];
-    if (sr) sr.node.rotation.z = sr.base.z + Math.sin(t * 0.4) * 0.02;
-    const ep = arm['right_elbow_pitch_link'];
-    if (ep) ep.node.rotation.x = ep.base.x + 0.06 + Math.sin(t * 0.6 + 1) * 0.03;
-    const palm = arm['right_palm_link'];
-    if (palm) palm.node.rotation.y = palm.base.y + Math.sin(t * 0.5) * 0.04;
+
+    if (walkData) {
+      const frames = walkData.frames;
+      const idx = Math.floor((t * walkData.fps) % frames.length);
+      const row = frames[idx];
+      for (let i = 0; i < walkData.names.length; i++) {
+        const node = links[walkData.names[i]];
+        if (!node) continue;
+        const v = row[i];
+        node.position.set(v[0], v[1], v[2]);
+        node.quaternion.set(v[3], v[4], v[5], v[6]).normalize();
+      }
+    }
 
     renderer.render(scene, camera);
   }

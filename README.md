@@ -19,7 +19,7 @@ content/radar/*.md       One file per radar signal
 scripts/build_pages.py   Regenerates the two list pages
 scripts/check_site.py    Read-only checks: links, fields, facts expiry, radar freshness, i18n parity, chrome
 assets/                  CSS, JS, fonts, images
-assets/models/           g1_draco.glb: Unitree G1 from the local Isaac Sim asset library, converted with Blender and Draco-compressed
+assets/models/           g1_walk.glb (SimReady G1, Draco) and g1_walk.json (240 frames of a Newton-simulated walk)
 assets/js/vendor/        Three r160, GLTFLoader, DRACOLoader, decoder, RoomEnvironment
 ```
 
@@ -100,7 +100,7 @@ The pre-redesign version is preserved on branch `backup/pre-redesign-2026-11-10`
 
 ## Pending
 
-- Hero: full-bleed Three.js scene behind the name (`assets/js/hero-three.js`), using a Unitree G1 USD from the local Isaac Sim install converted to Draco GLB. The GLB keeps the named joint hierarchy, so the right arm is driven directly by pointer and scroll; a point-cloud surface and wireframe grid form the backdrop; a static SVG fallback shows until the scene is ready.
+- Hero: full-bleed Three.js scene behind the name. The G1 SimReady asset is walked in Newton (`example_robot_policy`, MuJoCo solver, ONNX policy), the 240-frame joint trajectory is recorded to `g1_walk.json`, and the GLB replays it in place. The SimReady asset has two plain materials and no textures, so the look stays gray-white. Pointer and scroll still turn the robot; the grid is faint in light mode and strong in dark mode.
 - GitHub repositories for the project pages; all except SIM-EVAL are marked "GitHub pending".
 - Project media (stills or clips) for the five new case pages; they are text-only for now.
 
