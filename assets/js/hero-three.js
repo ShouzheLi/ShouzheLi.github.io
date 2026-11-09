@@ -167,6 +167,8 @@ function init(host) {
   scene.add(streaks);
 
   const links = {};
+  const restPose = {};
+  const tmpQuat = new THREE.Quaternion();
   let walkData = null;
   let loaded = false;
 
@@ -208,6 +210,9 @@ function init(host) {
       if (!candidates[key] || (o.children && o.children.length > 0)) candidates[key] = o;
     });
     Object.assign(links, candidates);
+    for (const [key, node] of Object.entries(links)) {
+      restPose[key] = { p: node.position.clone(), q: node.quaternion.clone() };
+    }
 
     robot.add(model);
     walkData = data;
@@ -289,14 +294,22 @@ function init(host) {
 
     if (walkData) {
       const frames = walkData.frames;
-      const idx = Math.floor((t * walkData.fps) % frames.length);
+      const idx = Math.floor((t * walkData.fps * 0.6) % frames.length);
       const row = frames[idx];
       for (let i = 0; i < walkData.names.length; i++) {
-        const node = links[walkData.names[i]];
+        const name = walkData.names[i];
+        const node = links[name];
         if (!node) continue;
         const v = row[i];
-        node.position.set(v[0], v[1], v[2]);
-        node.quaternion.set(v[3], v[4], v[5], v[6]).normalize();
+        const rest = restPose[name];
+        if (rest && /shoulder|elbow|palm|hand|wrist/.test(name)) {
+          node.position.copy(rest.p);
+          tmpQuat.set(v[3], v[4], v[5], v[6]).normalize();
+          node.quaternion.copy(rest.q).slerp(tmpQuat, 0.25);
+        } else {
+          node.position.set(v[0], v[1], v[2]);
+          node.quaternion.set(v[3], v[4], v[5], v[6]).normalize();
+        }
       }
     }
 
