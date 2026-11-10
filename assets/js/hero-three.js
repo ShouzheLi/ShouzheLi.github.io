@@ -168,6 +168,7 @@ function init(host) {
 
   const links = {};
   const restPose = {};
+  const simRest = {};
   const tmpQuat = new THREE.Quaternion();
   let walkData = null;
   let loaded = false;
@@ -216,6 +217,15 @@ function init(host) {
 
     robot.add(model);
     walkData = data;
+    if (data.rest) {
+      data.names.forEach((name, i) => {
+        const v = data.rest[i];
+        simRest[name] = {
+          p: new THREE.Vector3(v[0], v[1], v[2]),
+          q: new THREE.Quaternion(v[3], v[4], v[5], v[6])
+        };
+      });
+    }
     loaded = true;
     host.classList.add('is-ready');
     host.closest('.hero-stage')?.classList.add('is-live');
@@ -294,14 +304,14 @@ function init(host) {
 
     if (walkData) {
       const frames = walkData.frames;
-      const idx = Math.floor((t * walkData.fps * 0.6) % frames.length);
+      const idx = Math.floor((t * walkData.fps * 0.5) % frames.length);
       const row = frames[idx];
       for (let i = 0; i < walkData.names.length; i++) {
         const name = walkData.names[i];
         const node = links[name];
         if (!node) continue;
         const v = row[i];
-        const rest = restPose[name];
+        const rest = simRest[name] || restPose[name];
         if (rest && /shoulder|elbow|palm|hand|wrist/.test(name)) {
           node.position.copy(rest.p);
           tmpQuat.set(v[3], v[4], v[5], v[6]).normalize();
