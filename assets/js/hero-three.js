@@ -304,7 +304,7 @@ function init(host) {
 
     if (walkData) {
       const frames = walkData.frames;
-      const idx = Math.floor((t * walkData.fps * 0.45) % frames.length);
+      const idx = Math.floor((t * walkData.fps * 0.35) % frames.length);
       const row = frames[idx];
       for (let i = 0; i < walkData.names.length; i++) {
         const name = walkData.names[i];
