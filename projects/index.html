@@ -46,10 +46,7 @@
     <section class="list-hero" style="padding:64px 0 24px;">
       <div class="wrap">
         <p class="eyebrow"><span class="t-en">Projects</span><span class="t-zh">项目</span></p>
-        <h1 class="display" style="max-width:18ch;">
-          <span class="t-en">Selected systems.</span>
-          <span class="t-zh">这些系统。</span>
-        </h1>
+        <h1 class="display" style="max-width:18ch;"><span class="t-en">Research projects.</span><span class="t-zh">研究项目。</span></h1>
         <p class="lede" style="max-width:66ch;">
           <span class="t-en">Simulation, evaluation and robot learning — the parts that make the rest of the loop measurable.</span>
           <span class="t-zh">仿真、评测与机器人学习——让整个闭环可量测的那部分。</span>
@@ -133,12 +130,23 @@
             </div>
           </article>
           <article class="project-card reveal">
-            <a class="project-media" href="/projects/franka-reach/index.html"><img src="/assets/img/project-sim-eval.svg" alt="Franka reach RL versus imitation" loading="lazy"></a>
+            <a class="project-media" href="/projects/franka-reach/index.html"><video src="/assets/video/franka-reach.mp4" poster="/assets/img/project-sim-eval.svg" muted loop autoplay playsinline preload="metadata"></video></a>
             <div class="project-body">
               <span class="project-kicker"><span class="t-en">Personal · robot learning</span><span class="t-zh">个人 · 机器人学习</span></span>
               <h2 class="project-title"><a href="/projects/franka-reach/index.html">Franka reach: RL vs imitation</a></h2>
               <p class="project-desc"><span class="t-en">PPO versus BC + DAgger, then the same ONNX replayed in Newton across 64 paired states.</span><span class="t-zh">PPO 对 BC + DAgger，再把同一 ONNX 放进 Newton 做 64 组配对验证。</span></p>
               <div class="tags"><span class="tag tag-accent">PPO</span><span class="tag">BC / DAgger</span><span class="tag">Newton</span></div>
+            </div>
+          </article>
+          <article class="project-card reveal">
+            <a class="project-media project-media--empty" href="https://github.com/ShouzheLi/AIMOGA_ROBODOG" target="_blank" rel="noopener">
+              <span class="project-kicker">GitHub · quadruped robot</span>
+            </a>
+            <div class="project-body">
+              <span class="project-kicker"><span class="t-en">Personal · robot learning</span><span class="t-zh">个人 · 机器人学习</span></span>
+              <h2 class="project-title"><a href="https://github.com/ShouzheLi/AIMOGA_ROBODOG" target="_blank" rel="noopener">AIMOGA RoboDog</a></h2>
+              <p class="project-desc"><span class="t-en">A quadruped robot learning project, currently training on a separate machine. Repository only for now; cover pending.</span><span class="t-zh">四足机器人学习项目，正在另一台机器上训练；目前只放仓库，封面待补。</span></p>
+              <div class="tags"><span class="tag tag-accent">Quadruped</span><span class="tag">RL</span><span class="tag">Training</span></div>
             </div>
           </article>
 
