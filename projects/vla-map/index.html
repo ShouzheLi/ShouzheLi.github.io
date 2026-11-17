@@ -8,6 +8,7 @@
   <meta name="color-scheme" content="light dark">
   <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <style>.lang-toggle{display:none}</style>
 </head>
 <body data-page="projects">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -52,11 +53,7 @@
       <div class="zh-summary"><strong>中文摘要</strong>把 8 条 VLA/策略路线画在同一骨架上：输入 → 骨干 → 动作头 → 输出。核心主张是差别只有两件事——动作怎么表示、块有多长。公开事实、一手经验、判断分三区显示，判断带推翻条件。</div>
     </header>
 
-    <section class="detail-section"><div class="narrow prose">
-      <h2><span class="sec-no">01</span>Context</h2>
-      <p>I needed an internal map that could survive a technical review: which VLA routes exist, what each one actually changes, and what we have run ourselves versus what we only read in a paper or a vendor post.</p>
-      <p>The deliverable is a single HTML file with no scripts and no external requests, so it can be shared, printed and archived without a build step.</p>
-    </div></section>
+    
 
     <section class="detail-section"><div class="narrow">
       <h2><span class="sec-no">02</span>Problem</h2>
@@ -67,14 +64,7 @@
       </div>
     </div></section>
 
-    <section class="detail-section"><div class="narrow">
-      <h2><span class="sec-no">03</span>Approach</h2>
-      <div class="focus-grid" style="margin-top:8px;">
-        <article class="focus-card"><div class="focus-no">01 / THREE ZONES</div><h3>Separate the evidence.</h3><p>Zone A is public fact, zone B is first-hand experience, zone C is judgment. Colour and position keep them apart; every C claim carries a falsifier.</p></article>
-        <article class="focus-card"><div class="focus-no">02 / ONE GRAMMAR</div><h3>Compare on one axis.</h3><p>Input, backbone, action head, output. Colour only marks the action head, so text tokens, bins, chunks, denoising and flow can be compared side by side.</p></article>
-        <article class="focus-card"><div class="focus-no">03 / HONEST</div><h3>Mark what was not run.</h3><p>Models we have not run are grey and dashed. Hands-on coverage is stated as 3 of 8 instead of being implied.</p></article>
-      </div>
-    </div></section>
+    
 
     <section class="detail-section"><div class="narrow">
       <h2><span class="sec-no">04</span>Result</h2>
