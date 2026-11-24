@@ -448,6 +448,8 @@ p { margin: 0; }
 .project-title { font-size: 19px; letter-spacing: -.01em; }
 .project-desc { font-size: 13px; color: var(--muted); line-height: 1.55; }
 .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 12px; }
+.project-more { font-family: var(--mono); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); align-self: flex-start; }
+.project-more:hover { text-decoration: underline; text-underline-offset: 3px; }
 .tag {
   font-family: var(--mono);
   font-size: 10px;
